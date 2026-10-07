@@ -17,7 +17,7 @@
             <li><a href="index.html#Inicio"> Inicio </a></li>
             <li><a href="menu.html"> Menú Completo </a></li>
             <li><a href="libros.html"> Biblioteca </a></li>
-            <li><a href="#Contacto"> Contacto </a></li>
+            <li><a href="contacto.html"> Contacto </a></li>
         </ul>
     </nav>
 
@@ -42,22 +42,36 @@
             </div>
         </section>
 
-        <section id="Prestamo" class="seccion-destacada">
-            <h2>Solicitar Préstamo de Libro</h2>
-            <div class="form-container">
-                <form id="form-libros">
-                    <label for="nombre">Nombre completo:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+        <section class="seccion-destacada">
+            <h2>Solicitar un libro</h2>
+            <form id="form-prestamo">
+                <fieldset>
+                    <legend>Detalles del Préstamo</legend>
                     
-                    <label for="telefono">Número de contacto:</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="Ej. 351 1234567" required>
+                    <label for="nombre-lector">Nombre completo:</label>
+                    <input type="text" id="nombre-lector" name="nombre-lector" placeholder="Ej. Ana López" required>
                     
-                    <label for="fecha">Día de retiro:</label>
-                    <input type="date" id="fecha" name="fecha" required>
+                    <label for="libro-seleccionado">Libro a solicitar:</label>
+                    <input type="text" id="libro-seleccionado" name="libro-seleccionado" placeholder="Ej. Cien Años de Soledad" required>
                     
-                    <button type="submit">Confirmar Préstamo</button>
-                </form>
-            </div>
+                    <!-- NUEVO CAMPO: Fecha de retiro -->
+                    <label for="fecha-retiro">Día de retiro:</label>
+                    <input type="date" id="fecha-retiro" name="fecha-retiro" required>
+                    
+                    <!-- Checkbox de Términos adaptado al nuevo CSS -->
+                    <div class="contenedor-terminos">
+                        <input type="checkbox" id="terminos-libros" name="terminos-libros" required>
+                        <label for="terminos-libros">
+                            He leído y acepto los <a href="terminos.txt" target="_blank">Términos de Préstamo</a>.
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="boton-enviar">Confirmar Préstamo</button>
+                </fieldset>
+            </form>
+            
+            <!-- Mensaje donde JavaScript inyectará la fecha de devolución -->
+            <p id="mensaje-devolucion" style="text-align: center; margin-top: 20px; font-weight: bold; color: #642f0a;"></p>
         </section>
     </main>
 

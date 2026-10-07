@@ -536,3 +536,103 @@ article:hover {
         flex-direction: column;
     }
 }
+
+
+/* =========================================
+   ESTILOS GENERALES PARA FORMULARIOS (Cafetería)
+   ========================================= */
+form fieldset {
+    border: 2px solid #642f0a; /* Marrón café oscuro */
+    border-radius: 10px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para que se lea bien */
+}
+
+form legend {
+    background-color: #642f0a;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #4a2511;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="date"],
+form input[type="number"], /* <-- Sumamos el campo numérico */
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c2a792;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="date"]:focus,
+form input[type="number"]:focus, /* <-- Sumamos el focus del campo numérico */
+form textarea:focus {
+    outline: none;
+    border-color: #642f0a;
+    box-shadow: 0 0 5px rgba(100, 47, 10, 0.3);
+}
+
+/* Estilos específicos para el Checkbox y su texto */
+.contenedor-terminos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contenedor-terminos input[type="checkbox"] {
+    width: auto;
+    cursor: pointer;
+}
+
+.contenedor-terminos label {
+    margin: 0; /* Anula el margin-top general de los labels */
+    font-weight: normal;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.contenedor-terminos a {
+    color: #642f0a;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Botón de envío unificado */
+.boton-enviar {
+    background-color: #642f0a;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.boton-enviar:hover {
+    background-color: #8b4513; /* Marrón un poco más claro */
+    transform: scale(1.02);
+}

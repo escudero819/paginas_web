@@ -18,7 +18,7 @@
         </a>
         <ul>
             <li><a href="index.html#Inicio"> Inicio </a></li>
-            <li><a href="destinos.html"> Destinos </a></li>
+            <li><a href="index.html#destiinos"> Destinos </a></li>
             <li><a href="index.html#Promociones"> Promociones </a></li>
             <li><a href="#Contacto"> Contacto </a></li>
         </ul>
@@ -59,55 +59,23 @@
                         <div class="grupo-input">
                             <label for="destino">Destino de interés</label>
                             <select id="destino" name="destino" required>
-                                <option value="" disabled selected>Seleccioná un destino...</option>
-                                <optgroup label="Ofertas Relámpago">
-                                    <option value="Bahamas">Escapada a las Bahamas (Promo)</option>
-                                    <option value="Patagonia">Aventura en la Patagonia (Promo)</option>
-                                </optgroup>
-                                <optgroup label="Catálogo Global">
-                                    <option value="Punta Cana">Punta Cana, Rep. Dominicana</option>
-                                    <option value="Santorini">Santorini, Grecia</option>
-                                    <option value="Bali">Bali, Indonesia</option>
-                                    <option value="Kioto">Kioto, Japón</option>
-                                    <option value="Nueva York">Nueva York, EEUU</option>
-                                    <option value="Bariloche">San Carlos de Bariloche</option>
-                                    <option value="Alpes Suizos">Alpes Suizos, Suiza</option>
-                                    <option value="Tromso">Tromsø, Noruega</option>
-                                    <option value="Amsterdam">Ámsterdam, Países Bajos</option>
-                                    <option value="Paris">París, Francia</option>
-                                    <option value="Valle Guadalupe">Valle de Guadalupe, México</option>
-                                </optgroup>
+                                <option value="" disabled selected>Cargando destinos...</option>
                             </select>
                         </div>
 
                         <div class="grupo-input-mitad">
                             <div class="grupo-input">
                                 <label for="mes">Mes de viaje</label>
-                                <select id="mes" name="mes" required>
-                                    <option value="" disabled selected>Elegí un mes...</option>
-                                    <option value="Enero">Enero</option>
-                                    <option value="Febrero">Febrero</option>
-                                    <option value="Marzo">Marzo</option>
-                                    <option value="Abril">Abril</option>
-                                    <option value="Mayo">Mayo</option>
-                                    <option value="Junio">Junio</option>
-                                    <option value="Julio">Julio</option>
-                                    <option value="Agosto">Agosto</option>
-                                    <option value="Septiembre">Septiembre</option>
-                                    <option value="Octubre">Octubre</option>
-                                    <option value="Noviembre">Noviembre</option>
-                                    <option value="Diciembre">Diciembre</option>
+                                <!-- Se habilita cuando elige destino -->
+                                <select id="mes" name="mes" required disabled>
+                                    <option value="" disabled selected>Primero elegí un destino</option>
                                 </select>
                             </div>
                             <div class="grupo-input">
                                 <label for="semana">Semana preferida</label>
-                                <select id="semana" name="semana" required>
-                                    <option value="" disabled selected>Elegí la semana...</option>
-                                    <option value="Semana 1">Del 1 al 7</option>
-                                    <option value="Semana 2">Del 8 al 14</option>
-                                    <option value="Semana 3">Del 15 al 21</option>
-                                    <option value="Semana 4">Del 22 al 28</option>
-                                    <option value="Semana 5">Últimos días del mes</option>
+                                <!-- Se habilita cuando elige el mes -->
+                                <select id="semana" name="semana" required disabled>
+                                    <option value="" disabled selected>Elegí el mes primero</option>
                                 </select>
                             </div>
                         </div>
@@ -130,5 +98,7 @@
             <p><strong>Email de consultas:</strong> <a href="mailto:mundoviajesOG@gmail.com">mundoviajesOG@gmail.com</a></p>
         </div>
     </footer>
+
+    <script src="script-reserva.js"></script>
 </body>
 </html>

@@ -27,7 +27,7 @@
                 <a href="libros.html"> Biblioteca </a>
             </li>
             <li>
-                <a href="#Contacto"> Contacto </a>
+                <a href="contacto.html"> Contacto </a>
             </li>
         </ul>
     </nav>
@@ -89,10 +89,14 @@
             </div>
         </section>
 
-        <section id="Reserva">
-            <h1> Reserva tu mesa </h1>
-            <div class="form-container">
-                <form id="reservaForm">
+        <section id="Reserva" class="seccion-destacada">
+            <h2>Reserva tu mesa</h2>
+            
+            <!-- Contenedor para que no quede ni muy angosto ni ocupe toda la pantalla -->
+            <form id="form-reserva">
+                <fieldset>
+                    <legend>Detalles de la Reserva</legend>
+                    
                     <label for="nombre">Nombre a cargo:</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
 
@@ -102,9 +106,17 @@
                     <label for="personas">Cantidad de personas:</label>
                     <input type="number" id="personas" name="personas" min="1" max="15" placeholder="Mínimo 1" required>
 
-                    <button type="submit">Confirmar Reserva</button>
-                </form>
-            </div>
+                    <!-- Checkbox usando las clases de la cafetería -->
+                    <div class="contenedor-terminos">
+                        <input type="checkbox" id="terminos-reserva" name="terminos-reserva" required>
+                        <label for="terminos-reserva">
+                            He leído y acepto los <a href="terminos.txt" target="_blank">Términos y Condiciones</a>.
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="boton-enviar">Confirmar Reserva</button>
+                </fieldset>
+            </form>
         </section>
     </main>
 
