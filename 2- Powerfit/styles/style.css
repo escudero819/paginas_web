@@ -1,0 +1,820 @@
+
+
+/* ENCABEZADO */
+
+header {
+    padding: 0;
+}
+
+header img{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+/* NAV */
+nav {
+    background-color: rgb(26, 1, 1); 
+    position: sticky;
+    padding: 5px;
+    top: 0;
+    z-index: 100;
+    font-size: 200%;
+    display: flex;
+    justify-content: center; /* Centra exactamente la lista ul en toda la pantalla */
+    align-items: center;
+    padding: 12px 20px;
+}
+
+/* El logo queda anclado a la izquierda sin desplazar al menú */
+.logo-nav {
+    position: absolute;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgb(204, 202, 202);
+    text-decoration: none;
+    font-style: italic;
+    padding-right: 8px;
+}
+
+.logo-nav img {
+    height: 35px;
+    width: auto;
+    border-radius: 50%;
+}
+
+nav ul {
+    display: flex;
+    padding: 10px;
+    margin: 0;
+    gap: 80px;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a{
+    text-decoration: none;
+    color: rgb(204, 202, 202);
+    transition: color 0.3s ease, background-color 0.3s ease;
+    background-color: rgb(58, 6, 6);
+    background-size: 120%;
+    border-radius: 8px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+nav a:hover {
+    color: black;
+    background-color: rgb(151, 8, 8);
+}
+
+body {
+    background-color: #0D0D0D;
+    color: white;
+}
+
+main {
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+footer {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    color: brown;
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.titulo {
+    font-size: 45px;
+}
+
+table {
+    background-color: #222222;
+    min-width: 65vw;
+    border-collapse: collapse;
+    border: 1;
+}
+
+table thead {
+    color:rgb(150, 148, 148);
+    background-color: rgb(105, 37, 37);
+}
+
+table, th, td {
+    border: 2px solid rgb(180, 0, 0);
+    padding: 8px;
+}
+
+footer {
+    text-align: center;
+}
+
+.articulado {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* =========================================
+   SECCIÓN: PRESENTACIÓN (HERO SECTION)
+   ========================================= */
+.hero-presentacion {
+    background: linear-gradient(to bottom, #1a1a1a, #0D0D0D); /* Degradado sutil */
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 2px solid #850202f1; /* Línea roja divisoria */
+}
+
+.hero-contenido {
+    max-width: 1000px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-contenido h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.texto-gancho {
+    font-size: 1.3rem;
+    color: #cccccc;
+    max-width: 800px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.texto-gancho strong {
+    color: #cf0000f1;
+}
+
+/* --- Contenedor de las imágenes --- */
+.comparacion-visual {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap; /* Para que se apilen en celulares */
+}
+
+.tarjeta-visual {
+    position: relative;
+    width: 45%;
+    min-width: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid #333333;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto para destacar la imagen de "Tu mejor versión" */
+.tarjeta-visual.destacada {
+    border-color: #cf0000f1;
+    transform: scale(1.05); /* Ligeramente más grande */
+}
+
+.tarjeta-visual:hover {
+    transform: translateY(-5px) scale(1.05); /* En dispositivos con mouse, ambas reaccionan */
+}
+
+.tarjeta-visual img {
+    width: 100%;
+    height: 300px; /* Altura fija para que ambas fotos se vean parejas */
+    object-fit: cover;
+    display: block;
+    filter: grayscale(30%); /* Apaga un poco los colores por defecto */
+    transition: filter 0.3s ease;
+}
+
+.tarjeta-visual.destacada img, 
+.tarjeta-visual:hover img {
+    filter: grayscale(0%); /* Colores vivos en el objetivo o al pasar el mouse */
+}
+
+.etiqueta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 15px 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.tarjeta-visual.destacada .etiqueta {
+    background-color: rgba(207, 0, 0, 0.9); /* Rojo semitransparente */
+}
+
+/* --- Texto Final y Botón --- */
+.texto-solucion {
+    background-color: #222222;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 800px;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+    border-left: 4px solid #cf0000f1;
+}
+
+.btn-primario {
+    display: inline-block;
+    margin-top: 25px;
+    background-color: #cf0000f1;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primario:hover {
+    background-color: #9c0000;
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   SECCIÓN: EQUIPOS EN LA SEDE
+   ========================================= */
+.seccion-equipos {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.texto-equipos {
+    color: #cccccc;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+}
+
+/* --- Panel Contenedor Principal --- */
+.panel-interactivo {
+    display: flex;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* --- Menú Izquierdo (20%) --- */
+.menu-equipos {
+    flex: 0 0 20%;
+    background-color: #111111;
+    border-right: 2px solid #cf0000f1; /* Línea divisoria roja */
+    padding: 30px 0;
+}
+
+.menu-equipos h3 {
+    color:#333333;
+}
+
+.menu-equipos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-equipos li {
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #888888;
+    text-transform: uppercase;
+    cursor:none;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.menu-equipos li:hover {
+    color: #ffffff;
+    background-color: #222222;
+    border-left: 4px solid #cf0000f1;
+    padding-left: 25px; /* Pequeño empuje a la derecha */
+}
+
+/* --- Visor Derecho (80%) --- */
+.visor-equipos {
+    flex: 0 0 80%;
+    position: relative;
+    padding: 40px;
+    background-color: #222222;
+}
+
+/* Capas de contenido superpuestas */
+.contenido-visor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+    opacity: 0;
+    pointer-events: none; /* Evita que las capas invisibles bloqueen clicks */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(15px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Visibilidad de la capa por defecto */
+.contenido-visor.default {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- Estilos internos del contenido --- */
+.contenido-visor h3 {
+    color: rgb(151, 8, 8);
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.info-lista {
+    flex: 1;
+    text-align: left;
+}
+
+.info-lista ul {
+    list-style-type: square;
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    padding-left: 20px;
+}
+
+.contenido-visor img {
+    width: 45%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.galeria-sedes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.galeria-sedes img {
+    width: 45%;
+    height: 200px;
+}
+
+
+/* =========================================
+   LÓGICA HOVER (Magia de CSS sin JS)
+   ========================================= */
+
+/* 1. Al hacer hover en CUALQUIER ítem, ocultamos la pantalla por defecto */
+.panel-interactivo:has(.menu-equipos li:hover) .default {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(15px);
+}
+
+/* 2. Mostramos el contenido correspondiente según el elemento tocado */
+.panel-interactivo:has(.item-musculacion:hover) .cont-musculacion,
+.panel-interactivo:has(.item-crossfit:hover) .cont-crossfit,
+.panel-interactivo:has(.item-yoga:hover) .cont-yoga {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* --- SECCION DE LAS DIFERENTES CLASES DISPONIBLES --- */ 
+
+/* 1. Mantenemos tus imágenes de fondo */
+.Musculacion { background-image: url(fuerza.jfif); }
+.Crossfit { background-image: url(velocidad.jpg); }
+.Yoga { background-image: url(elasticidad.jfif); }
+
+/* 2. Estilos base para la tarjeta contenedora */
+.tarjeta-hover {
+    position: relative;
+    margin: 20px; /* Cambié tu margin: 10% porque "aplastaba" el grid */
+    height: 350px; /* Le damos altura fija para que el efecto se vea bien */
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+/* 3. Capa oscura invisible por defecto */
+.tarjeta-hover .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.4s ease;
+    z-index: 1;
+}
+
+/* 4. Contenedor de los textos (H1 y P) */
+.tarjeta-hover .contenido {
+    position: relative;
+    z-index: 2; /* Para que quede por encima de la capa oscura */
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 5. Título H1 inicial */
+.tarjeta-hover .contenido h1 {
+    color: white;
+    margin: 0;
+    padding-bottom: 0px; 
+    transition: padding-bottom 0.4s ease, color 0.4s ease;
+}
+
+/* 6. Párrafo oculto inicial */
+.tarjeta-hover .contenido p {
+    color: white;
+    margin: 0;
+    max-height: 0; /* Colapsamos su altura */
+    opacity: 0; /* Lo hacemos invisible */
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+    font-size: 1rem; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*   EFECTOS HOVER  */
+
+.tarjeta-hover:hover {
+    transform: scale(1.05);
+}
+
+/* A. Oscurecer fondo */
+.tarjeta-hover:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* B. Elevar título y pintar de rojo */
+.tarjeta-hover:hover .contenido h1 {
+    padding-bottom: 30px;
+    color: #cf0000f1; /* Usé el mismo rojo de tu header h1 para mantener la coherencia */
+}
+
+/* C. Aparecer texto */
+.tarjeta-hover:hover .contenido p {
+    opacity: 1;
+    max-height: 150px; /* Le damos espacio para revelarse */
+    margin-top: 10px; /* Separación con el H1 */
+}
+
+/* --- SECCION DE LOS PLANES SEMANALES CON ARTICULOS --- */
+
+/* Contenedor principal de los planes */
+.grid-planes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas del mismo tamaño */
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Diseño de cada tarjeta adaptado al modo oscuro */
+.plan-card {
+    background-color: #222222; /* Mismo tono oscuro que usaste en las clases */
+    border: 1px solid #333333; /* Borde sutil oscuro */
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Efecto hover: se eleva y el borde se ilumina en rojo */
+.plan-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.8);
+    border-color: #cf0000f1; /* Rojo del título */
+}
+
+/* Texto del plan (2d/sem, etc) */
+.plan-card h2 {
+    color: #ffffff; /* Letras blancas para contrastar con el fondo oscuro */
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+/* Espacio fijo para el precio */
+.contenedor-precio {
+    min-height: 50px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* El texto del precio (oculto por defecto) */
+.precio-hover {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff; /* Precio en blanco */
+    margin: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Mostrar el precio al hacer hover */
+.plan-card:hover .precio-hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Botón de Inscribirse (Estilo PowerFit) */
+.btn-inscribir {
+    background-color: #640000f1; /* Rojo oscuro de tu paleta */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover del botón */
+.btn-inscribir:hover {
+    background-color: rgb(126, 16, 16); /* Mismo rojo que usas en el hover de tu nav */
+    transform: scale(1.05); /* Pequeño efecto de agrandado al pasar el mouse */
+}
+
+
+
+/* =========================================
+   PANTALLA EMERGENTE (MODAL)
+   ========================================= */
+.modal-oculto {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro translúcido */
+    z-index: 2000; /* Asegura que tape el menú de navegación */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-visible {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-contenido {
+    background-color: #1a1a1a;
+    border: 2px solid #cf0000f1; /* Borde rojo PowerFit */
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+    transform: translateY(-30px);
+    transition: transform 0.3s ease;
+}
+
+.modal-visible .modal-contenido {
+    transform: translateY(0); /* Animación de caída suave */
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2.5rem;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.cerrar-modal:hover {
+    color: #cf0000f1;
+}
+
+.modal-contenido h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-top: 0;
+}
+
+.modal-horarios {
+    background-color: #0D0D0D;
+    border-left: 4px solid #cf0000f1;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: left;
+    border-radius: 6px;
+    color: #cccccc;
+    font-size: 0.95rem;
+}
+
+.modal-horarios p {
+    margin: 5px 0;
+}
+
+.modal-horarios strong {
+    color: #ffffff;
+}
+
+#btn-inscribirse-modal {
+    width: 100%; /* Botón ancho para destacar */
+    box-sizing: border-box;
+}
+
+
+
+
+
+/* =========================================
+   PÁGINA DE FORMULARIO - PANTALLA DIVIDIDA
+   ========================================= */
+
+/* Contenedor principal flexbox */
+.layout-pantalla-dividida {
+    display: flex;
+    min-height: 100vh;
+    background-color: #0D0D0D;
+}
+
+/* --- Panel Izquierdo (Fijo) --- */
+.panel-fijo-logo {
+    flex: 0 0 30%;
+    background-color: #111111;
+    border-right: 2px solid #cf0000f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: 100vh; 
+}
+
+.panel-fijo-logo img {
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(207, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.panel-fijo-logo h1 {
+    font-size: 3.5rem;
+    color: #cf0000f1;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* --- Panel Derecho (Formulario con Scroll) --- */
+.contenedor-formulario-scroll {
+    flex: 1;
+    padding: 60px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* --- Estilos internos del formulario --- */
+.caja-formulario {
+    background-color: #222222;
+    border-top: 5px solid #cf0000f1;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.caja-formulario h2 {
+    color: #ffffff;
+    margin-top: 0;
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+.caja-formulario p {
+    text-align: center;
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+#formInscripcion fieldset {
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+#formInscripcion legend {
+    color: #cf0000f1;
+    font-weight: bold;
+    padding: 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.grupo-input label {
+    color: #e0e0e0;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.grupo-input input,
+.grupo-input select {
+    background-color: #121212;
+    border: 1px solid #444;
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grupo-input input:focus,
+.grupo-input select:focus {
+    outline: none;
+    border-color: #cf0000f1;
+    box-shadow: 0 0 8px rgba(207, 0, 0, 0.4);
+}
+
+.btn-formulario {
+    width: 100%;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    cursor: pointer;
+}

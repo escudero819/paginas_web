@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - Café con Aroma</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="biblioteca">
+    <header id="Inicio">
+        <h1>Cafe Con Aroma</h1>
+        <h3>el cielo al alcance de un cafe</h3>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html#Inicio"> Inicio </a></li>
+            <li><a href="menu.html"> Menú Completo </a></li>
+            <li><a href="libros.html"> Biblioteca </a></li>
+            <li><a href="#Contacto"> Contacto </a></li>
+        </ul>
+    </nav>
+
+    <main class="menu-carta">
+        <h1 class="titulo-carta">Nuestra Biblioteca</h1>
+
+        <section class="seccion-texto">
+            <h2>Categorías</h2>
+            <div class="columnas-cafe">
+                <div class="col-cafe">
+                    <h3>Filosofía</h3>
+                    <p class="item-desc">Reflexioná mientras disfrutas tu café. Desde pensadores clásicos hasta ensayos contemporáneos.</p>
+                </div>
+                <div class="col-cafe">
+                    <h3>Fantasía</h3>
+                    <p class="item-desc">Viajá a otros mundos. Novelas épicas, sistemas de magia y aventuras inolvidables para perderte horas.</p>
+                </div>
+                <div class="col-cafe">
+                    <h3>Clásicos</h3>
+                    <p class="item-desc">Lecturas imprescindibles. Las grandes obras de la literatura universal que nunca pasan de moda.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="Prestamo" class="seccion-destacada">
+            <h2>Solicitar Préstamo de Libro</h2>
+            <div class="form-container">
+                <form id="form-libros">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+                    
+                    <label for="telefono">Número de contacto:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej. 351 1234567" required>
+                    
+                    <label for="fecha">Día de retiro:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                    
+                    <button type="submit">Confirmar Préstamo</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="Contacto" class="pipag">
+        <h4>Direccion: Av Libertador 1020</h4>
+        <h4>Redes Sociales: Aromas.ig (instagram) Aromas.fb (Facebook)</h4>
+        <p>cualquier consulta al privado del siguiente numero: +54 1354 35-1332</p>
+    </footer>
+
+    <script src="script-libros.js"></script>
+</body>
+</html>

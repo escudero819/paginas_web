@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafeteria con Aroma</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="inicio">
+    <header id="Inicio">
+            <h1>
+                Cafe Con Aroma
+            </h1>
+            <h3>
+                el cielo al alcance de un cafe
+            </h3>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="#Inicio"> Inicio </a>
+            </li>
+            <li>
+                <a href="menu.html"> Menu Completo </a>
+            </li>
+            <li>
+                <a href="libros.html"> Biblioteca </a>
+            </li>
+            <li>
+                <a href="#Contacto"> Contacto </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h1> Quienes somos? </h1>
+            <div class="presentacion">
+                <img src="logo.png" alt="imagen del logo">
+                <div class="descripcion">
+                    <p>
+                        Cafe con Aroma es una cafeteria hogarenia que tiene como objetivo presentar 
+                        los mejores aromas de cafe otorgando una degustacion y experiencia inolvidables
+                    </p>
+                    <img src="cafeteria.jfif" alt="cafeteria img" class="cafeteria">
+                </div>
+            </div>
+        </section>
+        
+
+        <section>
+            <h1> Especialidades </h1>
+            <div class="articulado">
+                <article class="cafe especialidades">
+                    <div class="overlay"></div>
+                    <div class="contenido">
+                        <h2> Cafe de especialidad</h2>
+                        <p> contamos con varios proveedores de distintos paises y multiples formas de filtrado, usted elige, mismo cafe distinta experiencia </p>
+                    </div>
+                </article>
+                <article class="menues especialidades">
+                    <div class="overlay"></div>
+                    <div class="contenido">
+                        <h2> Menus saludables y tentadores </h2>
+                        <p> combos fitness y proteicos, dulces, salados, todo en un mismo lugar </p>
+                    </div>
+                </article>
+                <article class="cafeteria especialidades">
+                    <div class="overlay"></div>
+                    <div class="contenido">
+                        <h2> Calidez al primer instante </h2>
+                        <p> ni bien pase por la puerta sera tratado como uno mas de nuestra familia, nuestro entorno le proporcionara un espacio tantopara trabajar, relajarse e incluso con amigos! </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="biblioteca">
+            <h1> Mas alla de un cafe </h1>
+            <!-- hacer una proporcion 40/60 explicando la presencia de la biblioteca, tu tamanio y un boton que lleve a ella -->
+             <p> proximamente descripcion e imagen de la biblioteca y gente leyendo, ademas de un boton que lo vincule con el index</p>
+        </section>
+
+
+        <section id="Promos">
+            <h1> Nuestras Promos </h1>
+            <div class="grid-article" id="sec-promos">
+            </div>
+        </section>
+
+        <section id="Reserva">
+            <h1> Reserva tu mesa </h1>
+            <div class="form-container">
+                <form id="reservaForm">
+                    <label for="nombre">Nombre a cargo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+
+                    <label for="fecha">Día de la reserva:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+
+                    <label for="personas">Cantidad de personas:</label>
+                    <input type="number" id="personas" name="personas" min="1" max="15" placeholder="Mínimo 1" required>
+
+                    <button type="submit">Confirmar Reserva</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="Contacto", class="pipag">
+        <h4>
+            Direccion: Av Libertador 1020
+        </h4>
+        <h4>
+            Redes Sociales: Aromas.ig (instagram) Aromas.fb (Facebook)
+        </h4>
+        <p>
+            cualquier consulta al privado del siguiente numero: +54 1354 35-1332
+        </p>
+    </footer>
+
+
+    <!-- Script para procesar la reserva y descargar el TXT -->
+    <script>
+        document.getElementById('reservaForm').addEventListener('submit', function(evento) {
+            // 1. Evita que la página se recargue al enviar el formulario
+            evento.preventDefault(); 
+
+            // 2. Obtener los valores que escribió el usuario
+            const nombre = document.getElementById('nombre').value;
+            const fecha = document.getElementById('fecha').value;
+            const personas = document.getElementById('personas').value;
+
+            // 3. Crear el contenido del archivo de texto
+            const contenidoTxt = `--- COMPROBANTE DE RESERVA ---\nCafetería: Café Con Aroma\n\nNombre: ${nombre}\nDía de la reserva: ${fecha}\nCantidad de personas: ${personas}\n------------------------------`;
+
+            // 4. Crear un archivo virtual (Blob) con el texto
+            const blob = new Blob([contenidoTxt], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+
+            // 5. Crear un enlace invisible para forzar la descarga del TXT
+            const enlaceDescarga = document.createElement('a');
+            enlaceDescarga.style.display = 'none';
+            enlaceDescarga.href = url;
+            enlaceDescarga.download = `Reserva_${nombre.replace(/\s+/g, '_')}.txt`;
+            
+            // 6. Simular el clic y limpiar
+            document.body.appendChild(enlaceDescarga);
+            enlaceDescarga.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(enlaceDescarga);
+            
+            // 7. Avisar al usuario y vaciar los campos
+            alert('¡Reserva confirmada! Se descargará un comprobante en formato TXT.');
+            this.reset();
+        });
+    </script>
+
+    <script src="script_menu.js"></script>
+</body>
+</html>

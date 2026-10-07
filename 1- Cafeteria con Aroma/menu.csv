@@ -1,0 +1,21 @@
+producto;categoria;precio;descripcion;pocillo;jarrito;taza;imagen
+Avocado Toast + Flat White;promo;5500;El hit de la semana con pan de masa madre;;;;avocado_toast.jfif
+Promo Clásica;promo;4500;Tostado de jamón y queso con un café expresso;;;;promo_tostado.jfif
+Promo Dulce;promo;5800;Tu torta favorita acompañada de un capuccino espumoso;;;;promo_dulce.jfif
+Desayuno Porteño;combo;4000;Café con leche mediano acompañado de 2 medialunas;;;;desayuno_porteno.jfif
+Merienda Ligera;combo;4200;Té verde en hebras con porción de budín de limón;;;;merienda_ligera.jfif
+Combo Salado;combo;4500;Porción de 5 chipas calientes con café americano;;;;combo_salado.jpg
+Café Colombiano;especialidad;3500;Granos seleccionados, acidez brillante y notas frutales;;;;colombiano.jfif
+Café Arábico Puro;especialidad;3800;Cultivo de altura con toques a chocolate y caramelo;;;;arabico.jfif
+Café Brasileño;especialidad;3200;Cuerpo intenso, baja acidez y un final a nuez tostada;;;;brasileno.jpg
+Café Expresso;clasico;;El clásico italiano intenso y aromático;1200;1500;1800;
+Lágrima;clasico;;Leche espumada con una gota de café;1200;1500;1800;
+Cortado;clasico;;Expresso con un chorrito de leche caliente;1300;1600;1900;
+Café con Leche;clasico;;Mitad café de filtro, mitad leche caliente;1500;1800;2100;
+Americano;clasico;;Expresso rebajado con agua caliente, sabor suave;1200;1500;1800;
+Medialunas (2u);pasteleria;1500;Dulces o saladas, recién horneadas;;;;
+Tostados de Miga;pasteleria;3500;Jamón y queso, ideal para compartir;;;;
+Chipas (x5);pasteleria;2000;Siempre hechos al momento;;;;
+Porción de Torta;pasteleria;4500;Red Velvet, Zanahoria o Chocotorta;;;;
+Alfajor Artesanal;pasteleria;1800;Relleno de abundante dulce de leche y baño de chocolate;;;;
+Budín de Limón;pasteleria;1600;Húmedo, con glaseado cítrico y amapolas;;;;

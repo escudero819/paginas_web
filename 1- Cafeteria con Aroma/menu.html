@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Completo - Café con Aroma</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="menu">
+    <header id="Inicio">
+        <h1>Cafe Con Aroma</h1>
+        <h3>el cielo al alcance de un cafe</h3>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html#Inicio"> Inicio </a></li>
+            <li><a href="menu.html"> Menú Completo </a></li>
+            <li><a href="libros.html"> Biblioteca </a></li>
+            <li><a href="#Contacto"> Contacto </a></li>
+        </ul>
+    </nav>
+
+    <main class="menu-carta">
+        <h1 class="titulo-carta">Nuestra Carta</h1>
+
+        <!-- SECCIÓN 1: Promociones (Tarjetas con imagen) -->
+        <section class="seccion-destacada">
+            <h2>Promociones Semanales</h2>
+            <div class="grid-article" id="sec-promos"></div>
+        </section>
+
+        <!-- SECCIÓN 2: Combos (Tarjetas con imagen) -->
+        <section class="seccion-destacada">
+            <h2>Combos Especiales</h2>
+            <div class="grid-article" id="sec-combos"></div>
+        </section>
+
+        <!-- SECCIÓN 3: Cafetería (Estilo Texto a dos columnas) -->
+        <section class="seccion-texto">
+            <h2>El Arte del Café</h2>
+            <div class="columnas-cafe">
+                <div class="col-cafe">
+                    <h3>Clásicos</h3>
+                    <ul class="lista-menu" id="sec-clasicos"></ul>
+                </div>
+                <div class="col-cafe">
+                    <h3>De Especialidad</h3>
+                    <ul class="lista-menu" id="sec-especialidad"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: Pastelería y Panadería (Estilo Texto) -->
+        <section class="seccion-texto">
+            <h2>Para Acompañar</h2>
+            <ul class="lista-menu" id="sec-pasteleria"></ul>
+        </section>
+    </main>s
+
+    <footer id="Contacto" class="pipag">
+        <h4>Direccion: Av Libertador 1020</h4>
+        <h4>Redes Sociales: Aromas.ig (instagram) Aromas.fb (Facebook)</h4>
+        <p>cualquier consulta al privado del siguiente numero: +54 1354 35-1332</p>
+    </footer>
+
+    <!-- Vinculamos el script específico del menú -->
+    <script src="script_menu.js"></script>
+</body>
+</html>

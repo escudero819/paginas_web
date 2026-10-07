@@ -1,0 +1,538 @@
+.inicio, .biblioteca, .menu {
+    background-color: rgb(253, 217, 181);
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(87, 41, 8);
+    
+    /* Asegura que el contenido del body se posicione correctamente sobre el fondo */
+    position: relative;
+    margin: 0;
+    padding: 20px; /* Ajusta según necesites */
+    z-index: 0;
+}
+
+/* Capa oculta que maneja exclusivamente el papel tapiz */
+.inicio::before {
+    content: "";
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Tu imagen y su repetición */
+    background-image: url('fondo_cafe2.png');
+    background-repeat: repeat;
+    
+    /* REGULA LA TRANSPARENCIA AQUÍ: 0.0 (invisible) a 1.0 (opaco) */
+    opacity: 0.15; 
+    
+    /* Coloca la imagen por debajo del texto */
+    z-index: -1; 
+    
+    /* Evita que interfiera con los clics en la página */
+    pointer-events: none; 
+}
+
+.biblioteca::before {
+    content: "";
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Tu imagen y su repetición */
+    background-image: url('fondo_libros.jpg');
+    background-repeat: repeat;
+    
+    /* REGULA LA TRANSPARENCIA AQUÍ: 0.0 (invisible) a 1.0 (opaco) */
+    opacity: 0.35; 
+    
+    /* Coloca la imagen por debajo del texto */
+    z-index: -1; 
+    
+    /* Evita que interfiera con los clics en la página */
+    pointer-events: none; 
+}
+
+.menu::before {
+    content: "";
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Tu imagen y su repetición */
+    background-image: url('fondo_menu.jpg');
+    background-repeat: repeat;
+    background-size: 50% auto;
+    
+    /* REGULA LA TRANSPARENCIA AQUÍ: 0.0 (invisible) a 1.0 (opaco) */
+    opacity: 0.2; 
+    
+    /* Coloca la imagen por debajo del texto */
+    z-index: -1; 
+    
+    /* Evita que interfiera con los clics en la página */
+    pointer-events: none; 
+}
+
+
+nav {
+    background-color: rgb(100, 47, 10);
+    font-size: 20px;
+    position: sticky;
+    z-index: 100;
+    padding: 15px;
+    top: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 8%;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(250, 196, 148);
+    border-radius: 4px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 125%;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav a:hover {
+    color:rgb(87, 41, 8);
+    background-color:rgb(179, 66, 1);
+}
+
+header {
+    background-image: url("fondo_header.jpg");
+    background-position: center -300px;
+    background-size: auto 75svh;
+    padding: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-align: center;
+    font-size: 150%;
+}
+
+header h1 {
+    color: rgb(245, 237, 230); 
+}
+
+header h3 {
+    color:rgb(250, 196, 148)
+}
+
+main {
+    color: black;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer {
+    color: white;
+    background-color: rgb(87, 41, 8);
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+section {
+    min-height: 80vh;
+    font-size: x-large;
+}
+
+.presentacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-around;
+}
+
+.descripcion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.presentacion img {
+    width: 300px;
+    height: 300px;
+}
+
+.descripcion img {
+    width: 100%;
+    height: auto;
+}
+
+.fondeado {
+    background-color: rgba(209, 137, 103, 0.575);
+    border-radius: 4%;
+    max-width: 85vw;
+    margin: 0 auto;
+    padding-top: 5px;
+}
+
+h1 {
+    color: rgb(136, 58, 2);
+    text-align: center;
+}
+
+.grid-article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 0 auto;
+}
+
+article {
+    background-color: #ffffffc5;
+    min-width: 20svw;
+    border-radius: 15px;
+    color: black;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article h3 {
+    color:rgb(136, 58, 2);
+}
+
+article img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+article:hover {
+    background-color: #ffffffea;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================
+   SECCIÓN: RESERVA DE MESA
+   ========================================= */
+#Reserva {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.form-container {
+    background-color: #ffffffea; /* Mismo fondo semitransparente de tus articles */
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#reservaForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#reservaForm label {
+    font-weight: bold;
+    color: rgb(136, 58, 2); /* Mismo color de tus h1 y h3 */
+}
+
+#reservaForm input {
+    padding: 10px;
+    border: 2px solid rgb(253, 217, 181);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#reservaForm input:focus {
+    border-color: rgb(179, 66, 1); /* Naranja al hacer clic */
+}
+
+#reservaForm button {
+    background-color: rgb(179, 66, 1);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#reservaForm button:hover {
+    background-color: rgb(100, 47, 10); /* Color oscuro de tu nav */
+}
+
+
+/* --- SECCION DE LAS DIFERENTES ESPECIALIDADES --- */ 
+
+/* 1. Mantenemos tus imágenes de fondo */
+.cafe { background-image: url(../colombiano.jfif); }
+.menues { background-image: url(../combo_salado.jpg); }
+.cafeteria { background-image: url(../cafeteria2.jfif); }
+
+.articulado {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* 2. Estilos base para la tarjeta contenedora */
+.especialidades {
+    position: relative;
+    margin: 20px; /* Cambié tu margin: 10% porque "aplastaba" el grid */
+    height: 350px; /* Le damos altura fija para que el efecto se vea bien */
+    border-radius: 10px;
+    border: 4px solid rgb(255, 208, 136);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+/* 3. Capa oscura invisible por defecto */
+.especialidades .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.4s ease;
+    z-index: 1;
+}
+
+/* 4. Contenedor de los textos (H1 y P) */
+.especialidades .contenido {
+    position: relative;
+    z-index: 2; /* Para que quede por encima de la capa oscura */
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 5. Título H1 inicial */
+.especialidades .contenido h2 {
+    color: white;
+    margin: 0;
+    padding-bottom: 0px; 
+    transition: padding-bottom 0.4s ease, color 0.4s ease;
+}
+
+/* 6. Párrafo oculto inicial */
+.especialidades .contenido p {
+    color: white;
+    margin: 0;
+    max-height: 0; /* Colapsamos su altura */
+    opacity: 0; /* Lo hacemos invisible */
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+    font-size: 1rem; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*   EFECTOS HOVER  */
+
+.especialidades:hover {
+    transform: scale(1.05);
+    border-color: rgb(87, 41, 8);
+}
+
+/* A. Oscurecer fondo */
+.especialidades:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* B. Elevar título y pintar de rojo */
+.especialidades:hover .contenido h2 {
+    padding-bottom: 30px;
+    color: rgb(179, 66, 1); /* Usé el mismo rojo de tu header h1 para mantener la coherencia */
+}
+
+/* C. Aparecer texto */
+.especialidades:hover .contenido p {
+    opacity: 1;
+    max-height: 150px; /* Le damos espacio para revelarse */
+    margin-top: 10px; /* Separación con el H1 */
+}
+
+
+/* =========================================
+   ESTILOS DINÁMICOS DEL MENÚ
+   ========================================= */
+
+/* Posicionamiento relativo para que la etiqueta de promo no se escape de la tarjeta */
+.grid-article article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mantiene el botón/precios abajo aunque el texto varíe */
+    padding-bottom: 15px;
+}
+
+/* Etiqueta de Promoción */
+.badge-promo {
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    background-color: rgb(179, 66, 1); /* Tu naranja característico */
+    color: white;
+    padding: 5px 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 20px 0 0 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+/* Contenedores de precios */
+.precio-unico {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(100, 47, 10); /* Tu marrón oscuro */
+    margin: 10px 0;
+}
+
+.precios-tamanos {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(253, 217, 181, 0.5); /* Fondo claro de tu paleta */
+    padding: 10px 5px;
+    border-radius: 8px;
+    margin: 10px 10px;
+    font-size: 0.9rem;
+    color: rgb(87, 41, 8);
+    font-weight: bold;
+}
+
+.precios-tamanos span {
+    display: flex;
+    flex-direction: column;
+}
+
+.precios-tamanos span small {
+    font-size: 0.7rem;
+    font-weight: normal;
+}
+
+/* =========================================
+   ESTILO CARTA DE RESTAURANTE (MENÚ)
+   ========================================= */
+.menu-carta {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.titulo-carta {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    border-bottom: 2px solid rgb(179, 66, 1);
+    padding-bottom: 10px;
+}
+
+.seccion-destacada {
+    margin-bottom: 60px;
+}
+
+.seccion-destacada h2, .seccion-texto h2 {
+    color: rgb(100, 47, 10);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+/* Diseño de texto para Cafés y Pastelería */
+.seccion-texto {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.columnas-cafe {
+    display: flex;
+    gap: 40px;
+}
+
+.col-cafe {
+    flex: 1;
+}
+
+.col-cafe h3 {
+    color: rgb(179, 66, 1);
+    border-bottom: 1px solid rgba(87, 41, 8, 0.2);
+    padding-bottom: 10px;
+}
+
+.lista-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* El truco de Flexbox para alinear texto a la izquierda y precio a la derecha */
+.item-texto {
+    margin-bottom: 20px;
+}
+
+.item-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px dotted rgba(87, 41, 8, 0.4);
+    margin-bottom: 5px;
+}
+
+.item-nombre {
+    font-size: 1.1rem; /* Achicamos mínimamente la letra para dar más espacio */
+    font-weight: bold;
+    color: rgb(87, 41, 8);
+    background-color: rgba(253, 217, 181, 0.8); 
+    padding-right: 10px;
+}
+
+.item-precios {
+    font-weight: bold;
+    color: rgb(100, 47, 10);
+    background-color: rgba(253, 217, 181, 0.8);
+    padding-left: 10px;
+    font-size: 0.95rem; /* Precios ligeramente más chicos para balancear */
+    white-space: nowrap; /* LA CLAVE: Evita que el texto se rompa en dos renglones */
+}
+
+.item-desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Responsive para que las columnas de café se apilen en celulares */
+@media (max-width: 768px) {
+    .columnas-cafe {
+        flex-direction: column;
+    }
+}

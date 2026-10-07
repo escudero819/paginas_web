@@ -1,0 +1,41 @@
+/* HOJA DE ESTILOS CSS (Cascading Style Sheets) */
+body {
+    font-family: Arial, sans-serif; /* Define la tipografía. Si no está Arial, usa otra sin adornos */
+    background-color: #f8fafc; /* Fondo claro elegante (gris muy suave, casi blanco) */ 
+    color: #334155; /* Color del texto (un gris muy oscuro para no cansar la vista) */ 
+    margin: 0; /*Elimina el margen blanco que los navegadores ponen por defecto */ 
+    transition: background-color 0.3s, color 0.3s; /* Prepara el terreno para un cambio de tema suave */
+}
+
+nav {
+    background-color: #1e293b; /* Color de fondo del menú (azul muy oscuro para contrastar) */
+    padding: 15px; /* Genera espacio interno para que el menú no quede apretado */
+    position: sticky; /* Hace que el menú se quede "pegado" al hacer scroll hacia abajo */  
+    top: 0; /* Se fija exactamente en el borde superior de la pantalla */ 
+}
+
+nav ul {
+    list-style: none; /* Quita los puntos de la lista */
+    display: flex; /* Flexbox: transforma la lista vertical en una fila horizontal */
+    justify-content: center; /* Centra los elementos en el medio de la pantalla */
+    gap: 30px; /* Separación exacta de 30 píxeles entre cada botón */ 
+    margin: 0; /* Quitamos los márgenes por defecto */
+    padding: 0; /* Quitamos los rellenos por defecto */
+}
+
+nav a {
+    color: white; /* Color del texto del link a blanco para que resalte */
+    text-decoration: none; /* Quita la línea azul subrayada */
+    font-weight: bold; /* Pone el texto en negrita */
+}
+
+main {
+    max-width: 800px; /* Limita el ancho en monitores grandes a 800 píxeles */
+    margin: 0 auto; /* Centra el bloque: 0 margen arriba/abajo, 'auto' a los costados */
+    padding: 20px; /* Da un espacio interior para que el texto no toque los bordes */ 
+}
+
+section {
+    min-height: 80vh; /* 80vh hace que cada sección ocupe al menos el 80% del alto de la pantalla */
+    padding-top: 50px; /* Empuja el contenido hacia abajo para que el menú pegajoso no lo tape */
+}

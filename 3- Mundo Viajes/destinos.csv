@@ -1,0 +1,13 @@
+nombre;imagen;descripcion;estado;fecha_inicio;fecha_fin
+Punta Cana, Rep. Dominicana;images/punta_cana.jpg;Aguas cristalinas y arena blanca. El escape ideal.;1;21/12;20/03
+Santorini, Grecia;images/santorini.jpg;Atardeceres mágicos y arquitectura icónica en el Mediterráneo.;1;21/12;20/03
+Bali, Indonesia;images/bali.jfif;Naturaleza exuberante y playas paradisíacas.;1;21/12;20/03
+Kioto, Japón;images/kioto.webp;Hojas rojizas y templos serenos. Un paisaje en su máxima expresión.;2;21/03;20/06
+Nueva York, EEUU;images/nueva_york.jfif;Paseos por Central Park cubierto de hojas doradas y clima ideal.;2;21/03;20/06
+Patagonia, Argentina;images/patagonia.jfif;Colores ocres y rojizos en los majestuosos bosques del sur.;2;21/03;20/06
+San Carlos de Bariloche;images/bariloche.webp;Nieve, esquí y los mejores chocolates para un viaje inolvidable.;3;21/06;20/09
+Alpes Suizos, Suiza;images/alpes_suizos.jfif;Deportes de invierno de primer nivel en paisajes de cuento.;3;21/06;20/09
+Tromsø, Noruega;images/tromso.jpg;Auroras boreales y expediciones árticas en el corazón del frío.;3;21/06;20/09
+Ámsterdam, Países Bajos;images/amsterdam.jfif;Campos de tulipanes floreciendo y paseos en bicicleta.;4;21/09;20/12
+París, Francia;images/paris.jfif;La ciudad se llena de colores con un clima perfecto para caminar.;4;21/09;20/12
+Valle de Guadalupe, México;images/v_guadalupe.jpg;Viñedos verdes y clima ideal para los amantes del vino.;4;21/09;20/12

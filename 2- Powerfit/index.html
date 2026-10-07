@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Gimnasio PoweFit</title>
+</head>
+<body>
+    <header id="Inicio">
+        <img src="styles/fondo_header_gimnasio.jfif" alt="header">
+    </header>
+
+    <nav>
+        <a href="#Inicio" class="logo-nav">
+            <img src="styles/logo-gimnasio.png" alt="Logo Powerfit mini">
+            <span>Powerfit</span> <!-- Opcional: el nombre al lado del loquito -->
+        </a>
+        <ul>
+            <li>
+                <a href="#Presentacion"> Inicio </a>
+            </li>
+            <li>
+                <a href="#Equipamiento"> Equipos </a>
+            </li>
+            <li>
+                <a href="#Clases"> Clases </a>
+            </li>
+            <li>
+                <a href="#Contacto"> Contacto </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="Presentacion" class="hero-presentacion">
+            <div class="hero-contenido">
+                <h1>¿Tu cuerpo te está pidiendo un cambio?</h1>
+                
+                <p class="texto-gancho">
+                    La rutina, el estrés y el sedentarismo apagan tu energía. Reactivar tu circulación, fortalecer tus músculos y mantenerte en movimiento no es solo una cuestión de estética, es <strong>calidad de vida</strong>.
+                </p>
+
+                <div class="comparacion-visual">
+                    <div class="tarjeta-visual">
+                        <img src="sedentarismo.webp" alt="Persona cansada o en estado sedentario">
+                        <div class="etiqueta">El punto de partida</div>
+                    </div>
+                    
+                    <div class="tarjeta-visual destacada">
+                        <img src="atletismo.jfif" alt="Persona atlética y llena de energía">
+                        <div class="etiqueta">Tu mejor versión</div>
+                    </div>
+                </div>
+
+                <div class="texto-solucion">
+                    <p>
+                        En <strong>PowerFit</strong> tenemos exactamente lo que necesitas para dar ese salto. Contamos con clases en múltiples disciplinas, adaptadas a todas las edades y niveles de experiencia. Nuestro equipo de profesionales está comprometido a brindarte el mejor servicio para que superes tus límites.
+                    </p>
+                    <a href="#Clases" class="btn-primario">Comienza tu transformación hoy</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="Planes">
+            <h1 class="titulo">Planes semanales</h1>
+            <div class="grid-planes">
+                <!-- Artículo 2 días -->
+                <article class="plan-card" data-plan="2d">
+                    <h2>2d/sem</h2>
+                    <p>ideal para mover el cuerpo entre semana con crossfit o yoga</p>
+                    <div class="contenedor-precio">
+                        <p class="precio-hover">Cargando...</p>
+                    </div>
+                </article>
+
+                <!-- Artículo 3 días -->
+                <article class="plan-card" data-plan="3d">
+                    <h2>3d/sem</h2>
+                    <p>plan basico donde se pueden practicar de forma optima nuestras diciplinas</p>
+                    <div class="contenedor-precio">
+                        <p class="precio-hover">Cargando...</p>
+                    </div>
+                </article>
+
+                <!-- Artículo 5 días -->
+                <article class="plan-card" data-plan="5d">
+                    <h2>5d/sem</h2>
+                    <p>brindamos el mejor servicio personalizado y una experiencia de transformacion clara</p>
+                    <div class="contenedor-precio">
+                        <p class="precio-hover">Cargando...</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="Equipamiento" class="seccion-equipos">
+            <h1 class="titulo">Equipos en la sede</h1>
+            <p class="texto-equipos">
+                En nuestro gimnasio contamos con todas las máquinas y elementos que toda rutina de entrenamiento requiere. Además, por un precio extra nos encargamos nosotros mismos de adaptarte una rutina exclusiva para ti y tus objetivos a alcanzar, tanto sea bajar de peso como aumentar masa muscular o activar el cuerpo.
+            </p>
+
+            <div class="panel-interactivo">
+                <!-- Menú Izquierdo (20%) -->
+                <div class="menu-equipos">
+                    <h3> Equipo </h3>
+                    <ul>
+                        <li class="item-musculacion">Musculación</li>
+                        <li class="item-crossfit">Crossfit</li>
+                        <li class="item-yoga">Yoga</li>
+                    </ul>
+                </div>
+
+                <!-- Visor Derecho (80%) -->
+                <div class="visor-equipos">
+                    
+                    <!-- 1. Contenido por Defecto (Imágenes de las sedes) -->
+                    <div class="contenido-visor default">
+                        <h3>Nuestras Instalaciones</h3>
+                        <div class="galeria-sedes">
+                            <!-- Usa imágenes de sedes reales o genéricas -->
+                            <img src="sede_central.jfif" alt="Sede Central">
+                            <img src="sede_norte.jfif" alt="Sede Norte">
+                        </div>
+                        <p>Contamos con múltiples sedes equipadas con tecnología de última generación para tu comodidad.</p>
+                    </div>
+
+                    <!-- 2. Contenido Musculación -->
+                    <div class="contenido-visor cont-musculacion">
+                        <div class="info-lista">
+                            <h3>Zona de Musculación</h3>
+                            <ul>
+                                <li>Máquinas convergentes y de poleas cruzadas</li>
+                                <li>Prensa de piernas 45° y Hack Squat</li>
+                                <li>Mancuernas hexagonales de 1kg a 50kg</li>
+                                <li>Bancos planos, inclinados y racks de sentadillas</li>
+                            </ul>
+                        </div>
+                        <img src="musculacion.jfif" alt="Máquinas de musculación">
+                    </div>
+
+                    <!-- 3. Contenido Crossfit -->
+                    <div class="contenido-visor cont-crossfit">
+                        <div class="info-lista">
+                            <h3>Box de Crossfit</h3>
+                            <ul>
+                                <li>Barras olímpicas y discos bumpers de caucho</li>
+                                <li>Cajas pliométricas (Plyo boxes) de madera</li>
+                                <li>Kettlebells (Pesas rusas) y Medicine Balls</li>
+                                <li>Estructuras gigantes para dominadas y anillas</li>
+                            </ul>
+                        </div>
+                        <img src="crosfit.jpeg" alt="Equipos de Crossfit">
+                    </div>
+
+                    <!-- 4. Contenido Yoga -->
+                    <div class="contenido-visor cont-yoga">
+                        <div class="info-lista">
+                            <h3>Estudio de Yoga</h3>
+                            <ul>
+                                <li>Mats antideslizantes de alta densidad</li>
+                                <li>Bloques de corcho y espuma EVA</li>
+                                <li>Cintos de estiramiento y correas</li>
+                                <li>Bolsters y mantas térmicas de relajación</li>
+                            </ul>
+                        </div>
+                        <img src="yoga.jpg" alt="Elementos de Yoga">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="Clases">
+            <h1 class="titulo">Clases Disponibles</h1>
+            <!-- Artículo Fuerza -->
+            <div class="articulado" >
+                <article class="Musculacion tarjeta-hover" data-clase="musculacion">
+                    <div class="overlay"></div>
+                    <div class="contenido">
+                        <h1>Musculacion</h1>
+                        <p>Entrenamiento enfocado en el levantamiento de peso y resistencia muscular.</p>
+                    </div>
+                </article>
+                
+                <!-- Artículo Velocidad -->
+                <article class="Crossfit tarjeta-hover" data-clase="crossfit">
+                    <div class="overlay"></div>
+                    <div class="contenido">
+                        <h1>Crossfit</h1>
+                        <p>Mejora tu capacidad cardiovascular y tu agilidad física general.</p>
+                    </div>
+                </article>
+                
+                <!-- Artículo Elasticidad -->
+                <article class="Yoga tarjeta-hover" data-clase="yoga">
+                    <div class="overlay"></div>
+                    <div class="contenido">
+                        <h1>Yoga</h1>
+                        <p>Clases de estiramiento para ganar flexibilidad y evitar lesiones.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- PANTALLA EMERGENTE (MODAL) -->
+        <div id="modalClase" class="modal-oculto">
+            <div class="modal-contenido">
+                <span class="cerrar-modal">&times;</span>
+                <h2 id="modal-titulo">Nombre de la Clase</h2>
+                <p id="modal-descripcion">Descripción extendida de la clase...</p>
+                
+                <div class="modal-horarios" id="modal-info-horarios">
+                    <!-- Aquí JavaScript inyectará los horarios desde clases.csv -->
+                </div>
+
+                <!-- Este botón redirige a la página de inscripción pasando el parámetro -->
+                <a href="#" id="btn-inscribirse-modal" class="btn-primario">Inscribirme a esta clase</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="Contacto">
+            <h3>
+                Contactenos
+            </h3>
+            <p><strong>Teléfono:</strong> +54 9 11 5555-1234</p>
+            <p><strong>Dirección:</strong> Av. San Martín 1500, Ciudad</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

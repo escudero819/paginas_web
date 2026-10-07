@@ -1,0 +1,9 @@
+clase;turno;dias;horario;entrenador
+yoga;Mañana;Lunes, Miercoles y Viernes;08:00 - 09:00;Sofia Navarro
+yoga;Tarde;Lunes, Miercoles y Viernes;16:00 - 18:00;Maria Soza
+yoga;Tarde;Martes y Jueves;16:00 - 18:00;Maria Soza
+yoga;Mañana;Martes y Jueves;08:00 - 09:00;Sofia Navarro
+musculacion;Mañana;Lunes a Viernes;09:00 - 13:00;Marcos Viale
+musculacion;Tarde;Lunes a Viernes;16:00 - 20:00;Edgardo Patezco
+crossfit;Mañana;Lunes a Viernes;14:00 - 15:30;Laura Gomez
+crossfit;Tarde;Lunesa a Viernes;20:00 - 21:30;Pedro Gomez

@@ -1,0 +1,21 @@
+body {
+    background-color: greenyellow;
+    font-family: 'Franklin Gothic Medium', sans-serif;
+}
+p {
+    color: blue;
+}
+h1 {
+    font-size: 36px;
+}
+div {
+    background-color: yellow;
+}
+.caja {
+    border-width: 2px;
+    border-style: solid;
+    border-color: red;
+}
+ul {
+    list-style-type: circle;
+}

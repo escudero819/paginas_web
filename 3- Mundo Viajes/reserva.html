@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar - Mundo Viajes</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header id="Header">
+        <img src="styles/header.jfif" alt="imagen header">
+    </header>
+    
+    <nav>
+        <a href="index.html#Header" class="logo-nav">
+            <img src="styles/logo-viajes.png" alt="Logo Mundo Viajes mini">
+            <span> Mundo Viajes </span>
+        </a>
+        <ul>
+            <li><a href="index.html#Inicio"> Inicio </a></li>
+            <li><a href="destinos.html"> Destinos </a></li>
+            <li><a href="index.html#Promociones"> Promociones </a></li>
+            <li><a href="#Contacto"> Contacto </a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="seccion-formulario">
+            <div class="contenedor-reserva">
+                <h1 style="color: #044974; text-align: center; margin-bottom: 10px;">Armá tu viaje a medida</h1>
+                <p style="text-align: center; color: #555; margin-bottom: 30px;">Completá tus datos y un asesor VIP se contactará con vos para confirmar disponibilidad y precios.</p>
+                
+                <form id="form-viaje">
+                    <!-- Datos Personales -->
+                    <fieldset>
+                        <legend>Datos Personales</legend>
+                        
+                        <div class="grupo-input">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+                        </div>
+
+                        <div class="grupo-input-mitad">
+                            <div class="grupo-input">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                            </div>
+                            <div class="grupo-input">
+                                <label for="telefono">Teléfono (WhatsApp)</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="+54 9 11 1234 5678" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Detalles del Viaje -->
+                    <fieldset>
+                        <legend>Detalles del Viaje</legend>
+
+                        <div class="grupo-input">
+                            <label for="destino">Destino de interés</label>
+                            <select id="destino" name="destino" required>
+                                <option value="" disabled selected>Seleccioná un destino...</option>
+                                <optgroup label="Ofertas Relámpago">
+                                    <option value="Bahamas">Escapada a las Bahamas (Promo)</option>
+                                    <option value="Patagonia">Aventura en la Patagonia (Promo)</option>
+                                </optgroup>
+                                <optgroup label="Catálogo Global">
+                                    <option value="Punta Cana">Punta Cana, Rep. Dominicana</option>
+                                    <option value="Santorini">Santorini, Grecia</option>
+                                    <option value="Bali">Bali, Indonesia</option>
+                                    <option value="Kioto">Kioto, Japón</option>
+                                    <option value="Nueva York">Nueva York, EEUU</option>
+                                    <option value="Bariloche">San Carlos de Bariloche</option>
+                                    <option value="Alpes Suizos">Alpes Suizos, Suiza</option>
+                                    <option value="Tromso">Tromsø, Noruega</option>
+                                    <option value="Amsterdam">Ámsterdam, Países Bajos</option>
+                                    <option value="Paris">París, Francia</option>
+                                    <option value="Valle Guadalupe">Valle de Guadalupe, México</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="grupo-input-mitad">
+                            <div class="grupo-input">
+                                <label for="mes">Mes de viaje</label>
+                                <select id="mes" name="mes" required>
+                                    <option value="" disabled selected>Elegí un mes...</option>
+                                    <option value="Enero">Enero</option>
+                                    <option value="Febrero">Febrero</option>
+                                    <option value="Marzo">Marzo</option>
+                                    <option value="Abril">Abril</option>
+                                    <option value="Mayo">Mayo</option>
+                                    <option value="Junio">Junio</option>
+                                    <option value="Julio">Julio</option>
+                                    <option value="Agosto">Agosto</option>
+                                    <option value="Septiembre">Septiembre</option>
+                                    <option value="Octubre">Octubre</option>
+                                    <option value="Noviembre">Noviembre</option>
+                                    <option value="Diciembre">Diciembre</option>
+                                </select>
+                            </div>
+                            <div class="grupo-input">
+                                <label for="semana">Semana preferida</label>
+                                <select id="semana" name="semana" required>
+                                    <option value="" disabled selected>Elegí la semana...</option>
+                                    <option value="Semana 1">Del 1 al 7</option>
+                                    <option value="Semana 2">Del 8 al 14</option>
+                                    <option value="Semana 3">Del 15 al 21</option>
+                                    <option value="Semana 4">Del 22 al 28</option>
+                                    <option value="Semana 5">Últimos días del mes</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grupo-input">
+                            <label for="pasajeros">Cantidad de Pasajeros</label>
+                            <input type="number" id="pasajeros" name="pasajeros" min="1" max="15" value="2" required>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn-reserva" style="width: 100%; margin-top: 20px;">Solicitar Presupuesto</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="Contacto">
+        <div class="footer-info">
+            <p><strong>Instagram:</strong> MundoViajes.ig | <strong>X (Twitter):</strong> MundoVajes.blog</p>
+            <p><strong>Email de consultas:</strong> <a href="mailto:mundoviajesOG@gmail.com">mundoviajesOG@gmail.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Viajes</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header id="Header">
+        <!-- Logo flotante a la izquierda -->
+        <img src="styles/header.jfif" alt="imagen header">
+    </header>
+
+    <nav>
+        <!-- Agregamos el logo en el nav, envuelto en un enlace para ir al inicio -->
+        <a href="#Header" class="logo-nav">
+            <img src="styles/logo-viajes.png" alt="Logo Mundo Viajes mini">
+            <span> Mundo Viajes </span> <!-- Opcional: el nombre al lado del loquito -->
+        </a>
+
+        <ul>
+            <li><a href="#Inicio"> Inicio </a></li>
+            <li><a href="#Destinos"> Destinos </a></li>
+            <li><a href="#Promociones"> Promociones </a></li>
+            <li><a href="#Contacto"> Contacto </a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section class="hero-gancho" id="Inicio">
+            <div class="hero-texto">
+                <h1>Descubrí el mundo con nosotros</h1>
+                <p>Somos una empresa organizadora de viajes alrededor del mundo. Contamos con destinos en Europa, Asia y toda América con experiencias únicas y servicio VIP.</p>
+                <a href="#Destinos" class="btn-reserva">Ver Destinos</a>
+            </div>
+            
+            <div class="hero-collage">
+                <img src="styles/playa.jfif" alt="Playa paradisíaca" class="img-collage img-1">
+                <img src="styles/montana.jfif" alt="Aventura en la montaña" class="img-collage img-2">
+                <img src="styles/ciudad.jfif" alt="Ciudad histórica" class="img-collage img-3">
+                <img src="styles/familia1.jpg" alt="Grupo viajando" class="img-collage img-4">
+            </div>
+        </section>
+
+        <section id="Destinos" class="seccion-destinos">
+            <h2>Destinos Destacados de la Temporada</h2>
+            
+            <!-- Contenedor donde JavaScript inyectará las 3 tarjetas -->
+            <div class="grid-tarjetas" id="contenedor-destinos">
+            </div>
+            <!-- NUEVO BOTÓN HACIA EL CATÁLOGO COMPLETO -->
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="destinos.html" class="btn-reserva" style="text-decoration: none; display: inline-block;">Conocé todos nuestros destinos a lo largo del año</a>
+            </div>
+        </section>
+        
+        <section id="Promociones" class="seccion-promo-relampago">
+            <div class="promo-overlay">
+                <div class="promo-contenido">
+                    <span class="badge-fuego">🔥 Oferta Relámpago</span>
+                    <h2>Aventura en la Patagonia</h2>
+                    <p>Paquete de invierno con excursiones incluidas. ¡Últimos lugares disponibles a precio especial!</p>
+                    
+                    <div class="precio-promo">
+                        <span class="precio-viejo">$120.000</span>
+                        <span class="precio-nuevo">$89.900</span>
+                    </div>
+
+                    <!-- Contador Dinámico -->
+                    <div class="contador" id="contador-promo">
+                        <div class="tiempo">
+                            <span id="dias">00</span>
+                            <small>Días</small>
+                        </div>
+                        <div class="tiempo">
+                            <span id="horas">00</span>
+                            <small>Hrs</small>
+                        </div>
+                        <div class="tiempo">
+                            <span id="minutos">00</span>
+                            <small>Min</small>
+                        </div>
+                        <div class="tiempo">
+                            <span id="segundos">00</span>
+                            <small>Seg</small>
+                        </div>
+                    </div>
+
+                    <a href="reserva.html" class="btn-reserva btn-pulsante" style="text-decoration: none; display: inline-block; text-align: center;">¡Aprovechar Descuento!</a>
+                </div>
+            </div>
+        </section>
+    
+    </main>
+
+    <footer id="Contacto">
+        <div class="footer-info">
+            <p>
+                <strong>Instagram:</strong> MundoViajes.ig | 
+                <strong>X (Twitter):</strong> MundoVajes.blog
+            </p>
+            <p>
+                <strong>Email de consultas:</strong> <a href="mailto:mundoviajesOG@gmail.com">mundoviajesOG@gmail.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script-destinos.js"></script>
+</body>
+</html>
