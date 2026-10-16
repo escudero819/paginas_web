@@ -1,135 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matias Gil FreeLance</title>
+    <title>Matías Gil | Desarrollador Web & IA</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/inicio.css">
 </head>
 <body>
-    <header>
-        <h1>
-            Matias Nehuen Gil Barbosa
-        </h1>
-        <h4>
-            Desarrollador Web
-        </h4>
-    </header>
     <nav>
+        <div class="logo">MNG.</div>
         <ul>
-            <li>
-                <a href="#Sobre mi">Sobre mi</a>
-            </li>
-            <li>
-                <a href="#Proyectos">Proyectos</a>
-            </li>
-            <li>
-                <a href="#Habilidades">Habilidades</a>
-            </li>
-            <li>
-                <a href="#Contacto">Contacto</a>
-            </li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Perfil</a></li>
+            <li><a href="#investigaciones">Investigación</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#habilidades">Skills</a></li>
+            <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
-    <section id="Sobre mi">
-        <h2>
-            Mis estudios
-        </h2>
-        <p> estudios secundarios tecnicos con un titulo de tecnico en software y estudios universitarios en ciencia de datos e IA</p>
-        <h2>
-            Habilidades blandas
-        </h2>
-        <p>
-            tengo grandes capacidades de aprendizaje y sentido de la responsabilidad
-        </p>
-    </section>
-    <section id="Proyectos">
-        <article>
-            <h3>
-                Pagina Web - Cafe con Aroma
-            </h3>
-            <p><strong>descripcion:</strong> se trataba de una cafeteria que queria una pagina llamativa y calida para transitir su escencia</p>
-        </article>
-        <article>
-            <h3>
-                Aplicacion - Mart Map
-            </h3>
-            <p><strong>descripcion:</strong> se trata de una conexion con las instalaciones de la nasa para recopilar su informacion y recrear enun entorno virtual un mapa de Marte</p>
-        </article>
-        <article>
-            <h3>
-                Videojuego - Un Problema de Presion
-            </h3>
-            <p><strong>descripcion:</strong> Un escaperoom a cerca de un ingeniero que tiene que escapar de 4 salas diferentes con una variedad de desafios logicos</p>
-        </article>
-    </section>
-    <section id="Habilidades">
-        <h2>
-            Lenguajes que se
-        </h2>
-        <article class="habilidades">
-            <h3>
-                HTML
-            </h3>
-            <p>
-                leguaje para programar paginas web con un nivel de seguridad basico
-            </p>
-            <footer>
-                <strong>Conocimiento:</strong> 80/100
-            </footer>
-        </article>
-        <article class="habilidades">
-            <h3>
-                HTML
-            </h3>
-            <p>
-                leguaje para programar paginas web con un nivel de seguridad basico
-            </p>
-            <footer>
-                <strong>Conocimiento:</strong> 70/100
-            </footer>
-        </article>
-        <article class="habilidades">
-            <h3>
-                CSS
-            </h3>
-            <p>
-                leguaje para estilizar las pag web de HTML, viene de la mano con disenio y colografia de las mismas
-            </p>
-            <footer>
-                <strong>Conocimiento:</strong> 50/100
-            </footer>
-        </article>
-        <article class="habilidades">
-            <h3>
-                Python
-            </h3>
-            <p>
-                leguaje moderno que esta creciendo junto a las IAs debido a que es un lenguaje interpretado.
-                Es el lenguaje base que utilizo para backend y la coneccion con la DB en la mayoria de mis programas
-            </p>
-            <footer>
-                <strong>Conocimiento:</strong> 90/100
-            </footer>
-        </article>
-        <article class="habilidades">
-            <h3>
-                Java Script
-            </h3>
-            <p>
-                Ideal para darle logica a las paginas web haciendo que tengan eventos y programas de fondo escapando a la mera visualizacion de contenidos
-            </p>
-            <footer>
-                <strong>Conocimiento:</strong> 60/100
-            </footer>
-        </article>
-    </section>
-    <footer>
-        <h2>
-            Informacion de Contacto
-        </h2>
-        <strong>Email:</strong> <a href="mngilbarbosa@gmail.com"> mngilbarbosa@gmail.com</a>
-        <strong>LinkedIn:</strong> MatiasN_GilB.linkedin
-        <strong>GitHub:</strong> <a href="https://github.com/escudero819">escudero819</a>
+
+    <header id="inicio" class="hero-section">
+        <div class="hero-content">
+            <span class="etiqueta-tech">Freelancer & Estudiante</span>
+            <h1>Matías Nehuen<br><span class="resaltado-morado">Gil Barbosa</span></h1>
+            <h4>Desarrollador de Software | Entusiasta de Inteligencia Artificial</h4>
+            <p>Transformando lógica compleja en soluciones digitales eficientes.</p>
+            <div class="hero-botones">
+                <a href="#proyectos" class="btn-primario">Ver mi trabajo</a>
+                <a href="#contacto" class="btn-secundario">Contactarme</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN: PRESENTACIÓN Y FORMACIÓN -->
+        <section id="sobre-mi" class="seccion-oscura">
+            <div class="contenedor">
+                <h2 class="titulo-seccion">Sobre mí & Formación</h2>
+                
+                <div class="perfil-grid">
+                    <!-- NUEVO: Columna Izquierda (Foto) -->
+                    <div class="perfil-foto">
+                        <img src="images/foto-perfil.jpeg" alt="Matías Gil Barbosa - Desarrollador Web">
+                    </div>
+                    
+                    <!-- Columna Derecha (Texto + Habilidades) -->
+                    <div class="perfil-contenido">
+                        <div class="perfil-texto">
+                            <p>Soy un desarrollador en constante evolución, cursando actualmente el sexto año en la especialidad de Programación y perfilándome hacia la <strong>Ingeniería en Inteligencia Artificial y Ciencia de Datos</strong>.</p>
+                            <p>Me destaco por mi rápida curva de aprendizaje, un fuerte sentido de la responsabilidad y mi capacidad para resolver problemas complejos a través del código, abarcando desde el desarrollo web hasta aplicaciones de escritorio y videojuegos.</p>
+                        </div>
+                        
+                        <div class="habilidades-blandas">
+                            <h3>Habilidades Blandas</h3>
+                            <ul class="lista-tech">
+                                <li>Resolución lógica de problemas</li>
+                                <li>Autodidactismo y adaptabilidad</li>
+                                <li>Responsabilidad y gestión del tiempo</li>
+                                <li>Pensamiento analítico</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN: INVESTIGACIONES VANGUARDISTAS (NUEVO) -->
+        <section id="investigaciones" class="seccion-clara">
+            <div class="contenedor">
+                <h2 class="titulo-seccion">Investigación Actual</h2>
+                <p class="subtitulo-seccion">Explorando las fronteras del desarrollo y la Inteligencia Artificial.</p>
+                
+                <div class="grid-tres-columnas">
+                    <article class="card-investigacion">
+                        <h3>Sistemas Multi-Agente & RAG</h3>
+                        <p>Investigación y diseño de arquitecturas de Generación Aumentada por Recuperación (RAG) y orquestación de agentes de IA para flujos de trabajo automatizados.</p>
+                    </article>
+                    <article class="card-investigacion">
+                        <h3>Visión Computacional</h3>
+                        <p>Desarrollo de integraciones utilizando <strong>OpenCV y MediaPipe</strong> para el reconocimiento de gestos manuales en tiempo real aplicados a interfaces interactivas.</p>
+                    </article>
+                    <article class="card-investigacion">
+                        <h3>Lógica Asíncrona en Python</h3>
+                        <p>Exploración de la concurrencia combinando el bucle de eventos de `asyncio` con librerías de renderizado para optimizar procesos en tiempo real.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: PROYECTOS -->
+        <section id="proyectos" class="seccion-oscura">
+            <div class="contenedor">
+                <h2 class="titulo-seccion">Proyectos Destacados</h2>
+                <div class="proyectos-grid">
+                    <article class="card-proyecto" id="problema-presion">
+                        <div class="proyecto-info">
+                            <span class="tag-lenguaje">Python / Arcade</span>
+                            <h3>Un Problema de Presión</h3>
+                            <p>Videojuego 2D Top-Down estilo Escape Room. Desarrollo completo de físicas, gestión de colisiones, renderizado de <em>spritesheets</em> y diseño de pixel art propio para los entornos.</p>
+                        </div>
+                    </article>
+                    <article class="card-proyecto" id="paginas">
+                        <div class="proyecto-info">
+                            <span class="tag-lenguaje">HTML / CSS / JS</span>
+                            <h3>Sistema Web PowerFit & Café con Aroma</h3>
+                            <p>Desarrollo integral de sitios web dinámicos orientados a clientes comerciales. Implementación de parseo de datos estructurados (CSV) mediante Fetch API para catálogos y sistemas de reservas.</p>
+                        </div>
+                    </article>
+                    <article class="card-proyecto", id="conoce-mundo">
+                        <div class="proyecto-info">
+                            <span class="tag-lenguaje">Python / SQLAlchemy</span>
+                            <h3>IA, Arquitecturas de Datos y ORM</h3>
+                            <p>Diseño y construcción de software de gestión ("Conoce el Mundo") utilizando bases de datos relacionales, ejecución de consultas SQL complejas y despliegue en ejecutables independientes mediante PyInstaller.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: HABILIDADES Y HERRAMIENTAS -->
+        <section id="habilidades" class="seccion-clara">
+            <div class="contenedor">
+                <h2 class="titulo-seccion">Stack Tecnológico</h2>
+                <div class="habilidades-container">
+                    <div class="categoria-habilidad">
+                        <h3>Backend & Software</h3>
+                        <div class="barra-progreso"><span class="nombre">Python</span><div class="fondo-barra"><div class="progreso morado" style="width: 90%;"></div></div></div>
+                        <div class="barra-progreso"><span class="nombre">SQL / SQLAlchemy</span><div class="fondo-barra"><div class="progreso morado" style="width: 80%;"></div></div></div>
+                        <div class="barra-progreso"><span class="nombre">C#</span><div class="fondo-barra"><div class="progreso morado" style="width: 60%;"></div></div></div>
+                    </div>
+                    <div class="categoria-habilidad">
+                        <h3>Frontend Web</h3>
+                        <div class="barra-progreso"><span class="nombre">HTML5 & CSS3</span><div class="fondo-barra"><div class="progreso rojo" style="width: 85%;"></div></div></div>
+                        <div class="barra-progreso"><span class="nombre">JavaScript (ES6+)</span><div class="fondo-barra"><div class="progreso rojo" style="width: 75%;"></div></div></div>
+                    </div>
+                    <div class="categoria-habilidad">
+                        <h3>Herramientas & Librerías</h3>
+                        <ul class="lista-herramientas">
+                            <li>Git & GitHub</li>
+                            <li>OpenCV / MediaPipe</li>
+                            <li>Pygame / Arcade</li>
+                            <li>PyInstaller</li>
+                            <li>Modelado 3D (Fusion 360)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <div class="contenedor">
+            <h2>¿Trabajamos juntos?</h2>
+            <p>Estoy disponible para nuevos proyectos freelance y oportunidades laborales.</p>
+            <div class="contacto-links">
+                <a href="mailto:mngilbarbosa@gmail.com" class="link-contacto">📧 mngilbarbosa@gmail.com</a>
+                <a href="#" class="link-contacto">💼 LinkedIn: MatiasN_GilB</a>
+                <a href="https://github.com/escudero819" target="_blank" class="link-contacto">🐙 GitHub: escudero819</a>
+            </div>
+            <p class="copyright">© 2026 Matías Nehuen Gil Barbosa. Todos los derechos reservados.</p>
+        </div>
     </footer>
+
+    <script>
+        const proyectos = document.querySelectorAll('.card-proyecto');
+        proyectos.forEach(proyecto => {
+            proyecto.addEventListener('click', (e) => {
+                const id_proyecto = proyecto.getAttribute('id');
+
+                window.location.href = `proyecto.html?id=${id_proyecto}`;
+            });
+        });
+    </script>
+
 </body>
 </html>

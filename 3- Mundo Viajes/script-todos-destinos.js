@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Lógica de los botones
+    // cambio de filtro
     botonesFiltro.forEach(boton => {
         boton.addEventListener('click', (e) => {
             // Actualizar estilo visual del botón activo

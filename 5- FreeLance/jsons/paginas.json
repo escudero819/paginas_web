@@ -1,0 +1,16 @@
+{
+    "id": "paginas",
+    "titulo": "Dulce Aroma y PowerFit",
+    "imagenHero": "../images/hero-pags.jpg",
+    "descripcion": "paginas web con diferentes necesidades sin perder el profesionalismo y calidad visual, intergacion de conocimientos en JavaScript, conceptos de BD integrada y CSS avanzado",
+    "galeria": [
+        "../images/pags-1.jpg", 
+        "../images/pags-2.jpg", 
+        "../images/pags-3.jpg"
+    ],
+    "equipo": ["Matías Nehuen Gil Barbosa", "Mario Bautista Ortega"],
+    "roles": ["Unico Desarrollador", "Diseñador de Lógica", "QA"],
+    "contribucion": "Me encargue yo mismo de toda la creacion y desarrollo de la pagina web apoyado en parte del vibe coding como medio de aprendizaje",
+    "herramientas": ["HTML", "JavaScript", "CSS avanzado", "archivos CSV"],
+    "blandas": ["Autodireccion", "Organizacion", "Formas", "Metodologias Agiles"]
+}

@@ -1,0 +1,107 @@
+/* =========================================
+   VARIABLES DE COLOR Y DISEÑO
+   ========================================= */
+:root {
+    --bg-oscuro: #0a0a0c;        /* Negro de fondo principal */
+    --bg-tarjetas: #13131a;      /* Negro un poco más claro para distinguir secciones */
+    --color-morado: #7c3aed;     /* Morado eléctrico (Acento primario) */
+    --color-morado-oscuro: #4c1d95; 
+    --color-rojo: #e11d48;       /* Rojo carmesí (Acento secundario) */
+    --color-texto: #f8fafc;      /* Blanco roto para legibilidad */
+    --color-texto-mutado: #94a3b8; /* Gris para descripciones */
+}
+
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el menú */
+}
+
+body {
+    background-color: var(--bg-oscuro);
+    color: var(--color-texto);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ================= NAVEGACIÓN ================= */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 12, 0.9);
+    backdrop-filter: blur(10px); /* Efecto vidrio esmerilado */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-texto);
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--color-morado);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background-color: #050505;
+    padding: 80px 0 40px 0;
+    text-align: center;
+    border-top: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.contacto-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.link-contacto {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.link-contacto:hover {
+    color: var(--color-morado);
+}
+
+.copyright {
+    color: var(--color-texto-mutado);
+    font-size: 0.9rem;
+    margin-top: 40px;
+}

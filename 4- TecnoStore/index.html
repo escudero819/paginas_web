@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <title>TechnoStore</title>
 </head>
 <body>
-    <header>
-        <h1>
-            TecnoStore
-        </h1>
+    <header class="canva-header" id="Inicio">
+        <!-- Capas de fondo (puedes añadir las imágenes o colores que quieras) -->
+        <div class="bg-slide" style="background-image: url('../4- TecnoStore/images/header-general.jfif');"></div>
+        <div class="bg-slide" style="background-image: url('../4- TecnoStore/images/header-escritorio.jfif');"></div>
+        <div class="bg-slide" style="background-image: url('../4- TecnoStore/images/header-sala.jfif');"></div>
+        
+        <!-- Filtro oscuro opcional para que el título resalte más -->
+        <div class="overlay"></div>
+
+        <!-- Contenido Fijo y Centrado -->
+        <div class="header-content">
+            <h1>TechnoStore</h1>
+            <p>componentes y elementos de ultima generacion</p>
+        </div>
     </header>
     <nav>
         <ul>
@@ -27,68 +38,155 @@
             </li>
         </ul>
     </nav>
+
+    <!-- SECCIÓN INICIO: Presentación formal de la tienda -->
+    <section class="seccion-intro">
+        <div  class="contenido-intro">
+            <div class="badge-ubicacion">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0a5.53 5.53 0 0 0-5.5 5.5c0 3.86 4.88 10.13 5.16 10.42a.46.46 0 0 0 .68 0c.28-.29 5.16-6.56 5.16-10.42A5.53 5.53 0 0 0 8 0zm0 8a2.5 2.5 0 1 1 2.5-2.5A2.5 2.5 0 0 1 8 8z"/>
+                </svg>
+                Av. Libertador 300, Alta Gracia, Córdoba
+            </div>
+            
+            <h2>Bienvenidos a tu tienda de confianza</h2>
+            
+            <p class="intro-descripcion">
+                Somos tu tienda especializada en tecnología de vanguardia. Te asesoramos para armar el setup perfecto, actualizar tu smartphone o domotizar tu hogar con los mejores componentes del mercado.
+            </p>
+            
+            <div class="intro-botones">
+                <a href="catalogo.html?cat=moviles" class="btn-primario">Explorar Catálogo</a>
+                <a href="#Contacto" class="btn-secundario">Contactanos</a>
+            </div>
+        </div>
+
+        <div class="imagen-intro">
+            <img src="images/tienda.jfif" alt="imagen de presentacion">
+        </div>
+
+    </section>
+
     <section id="Productos">
-        <article>
-            <h3>
-                Notebook
-            </h3>
-            <p>
-                tiene buenos componentes y es de ultima generacion
-            </p>
-            <h5>$2000</h5>
-        </article>
-        <article>
-            <h3>
-                Celular
-            </h3>
-            <p>
-                tiene buenos componentes y es de ultima generacion
-            </p>
-            <h5>$800</h5>
-        </article>
-        <article>
-            <h3>
-                Auriculares
-            </h3>
-            <p>
-                tiene buenos componentes y es de ultima generacion
-            </p>
-            <h5>$200</h5>
-        </article>
-        <article>
-            <h3>
-                Teclado
-            </h3>
-            <p>
-                tiene buenos componentes y es de ultima generacion
-            </p>
-            <h5>$100</h5>
+            <h2>Nuestras Categorías</h2>
+            <div class="productos-sec">
+                
+                <!-- Tarjeta de Categoría 1 -->
+                <article class="productos-art">
+                    <div class="titulo">
+                        <h3>Dispositivos Móviles</h3>
+                    </div>
+                    
+                    <div class="interaccion-wrapper">
+                        <!-- Esta imagen se enrollará hacia arriba -->
+                        <div class="imagen-categoria" style="background-image: url('images/celulares.jfif');"></div>
+                        
+                        <!-- Esta descripción bajará cuando la imagen se vaya -->
+                        <div class="descripcion-categoria">
+                            <p>Encontrá los últimos smartphones de alta gama, con las mejores cámaras y procesadores del mercado.</p>
+                            <a href="catalogo.html?cat=moviles" class="btn-comprar" style="text-decoration: none; text-align: center; width: 60%;">Ver catálogo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Tarjeta de Categoría 2 -->
+                <article class="productos-art">
+                    <div class="titulo">
+                        <h3>Smart Home</h3>
+                    </div>
+                    <div class="interaccion-wrapper">
+                        <div class="imagen-categoria" style="background-image: url('images/smarthome.webp');"></div>
+                        <div class="descripcion-categoria">
+                            <p>Automatizá tu hogar. Luces, asistentes virtuales y seguridad inteligente a tu alcance.</p>
+                            <a href="catalogo.html?cat=smarthome" class="btn-comprar" style="text-decoration: none; text-align: center; width: 60%;">Ver catálogo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Tarjeta de Categoría 3 -->
+                <article class="productos-art">
+                    <div class="titulo">
+                        <h3>Accesorios</h3>
+                    </div>
+                    <div class="interaccion-wrapper">
+                        <div class="imagen-categoria" style="background-image: url('images/accesorios.webp');"></div>
+                        <div class="descripcion-categoria">
+                            <p>Periféricos, cables, fundas y todo lo que necesitás para potenciar tu experiencia.</p>
+                            <a href="catalogo.html?cat=accesorios" class="btn-comprar" style="text-decoration: none; text-align: center; width: 60%;">Ver catálogo</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+    </section>
+
+    <section id="Ofertas" class="seccion-ofertas">
+        <h2>Oferta Relámpago</h2>
+        <article class="oferta-destacada">
+            
+            <!-- Columna Izquierda: Imagen -->
+            <div class="oferta-imagen">
+                <!-- Etiqueta flotante de descuento -->
+                <span class="badge-descuento">-25%</span>
+                <!-- Recordá usar una imagen con fondo transparente (PNG o WebP) -->
+                <img src="images/auriculares.jfif" alt="Auriculares Inalámbricos Pro">
+            </div>
+            
+            <!-- Columna Derecha: Información -->
+            <div class="oferta-info">
+                <h3>Auriculares Inalámbricos Pro</h3>
+                <p>Experimentá el sonido envolvente con cancelación de ruido activa y hasta 30hs de batería ininterrumpida. Diseño ergonómico ideal para largas sesiones de gaming o trabajo.</p>
+                
+                <div class="precios">
+                    <span class="precio-viejo">$2000</span>
+                    <span class="precio-nuevo">$1500</span>
+                </div>
+                
+                <button class="btn-comprar">Aprovechar oferta</button>
+            </div>
+
         </article>
     </section>
 
-    <section id="Ofertas">
-        <article>
-            <h3>
-                Auriculares
-            </h3>
-            <p>
-                tiene buenos componentes y es de ultia generacion
-            </p>
-            <h5 style="text-decoration:line-through;"> 
-                $2000
-            </h5>
-            <h5>
-                $1500
-            </h5>
-        </article>
+    <section id="Contacto">
+        <h2>Contacto</h2>
+        <form class="formulario-contacto">
+            <input type="text" placeholder="Nombre completo" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <textarea rows="4" placeholder="Tu consulta..." required></textarea>
+            <button type="submit" class="btn-comprar">Enviar mensaje</button>
+        </form>
     </section>
+    </main>
 
     <footer>
-        <p><strong>Horarios de Atencion</strong></p>
-        <p>lunes a viernes: 8:00 - 18:00</p>
-        <p>fines de semana: 14:00 - 18:00</p>
-        <p><strong>Donde encontrarnos</strong></p>
-        <p>Av. Libertador 300</p>
+        <div class="footer-grid">
+            <div>
+                <p><strong>Horarios de Atención</strong></p>
+                <p>Lunes a Viernes: 8:00 - 18:00</p>
+                <p>Fines de semana: 14:00 - 18:00</p>
+            </div>
+            <div>
+                <p><strong>Dónde encontrarnos</strong></p>
+                <p>Av. Libertador 300</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Capturamos el formulario de contacto usando su clase
+        const formContacto = document.querySelector('.formulario-contacto');
+        
+        if(formContacto) {
+            formContacto.addEventListener('submit', function(e) {
+                e.preventDefault(); // Evitamos la recarga
+                
+                // En un proyecto real, aquí enviaríamos los datos a un servidor (Backend)
+                alert("¡Mensaje recibido! Un especialista de TechnoStore analizará tu consulta y te responderá en breve.");
+                
+                this.reset(); // Limpiamos los campos
+            });
+        }
+    </script>
 </body>
 </html>

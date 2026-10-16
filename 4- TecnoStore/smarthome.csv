@@ -1,0 +1,7 @@
+tipo;nombre;imagen;descripcion;precio;stock
+Asistentes;Amazon Echo Dot 5;images/echo.jfif;Asistente virtual inteligente con Alexa.;50;30
+Asistentes;Google Nest Hub;images/nest.jfif;Pantalla inteligente con Google Assistant.;90;15
+Iluminación;Philips Hue White & Color;images/hue.jfif;Foco inteligente RGB controlable por app.;45;50
+Iluminación;Tira LED Xiaomi Smart;images/led.jfif;2 metros de luces LED controlables por WiFi.;35;0
+Seguridad;Cámara TP-Link Tapo;images/camara.jfif;Vigilancia 1080p con visión nocturna.;40;25
+Seguridad;Cerradura Inteligente August;images/cerradura.jfif;Acceso sin llave vía smartphone.;150;5

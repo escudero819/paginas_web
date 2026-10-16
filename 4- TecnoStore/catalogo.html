@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Catálogo - TechnoStore</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html#Inicio">Inicio</a></li>
+            <li><button class="btn-categoria" data-categoria="moviles">Moviles</button></li>
+            <li><button class="btn-categoria" data-categoria="smarthome">Smarthome</button></li>
+            <li><button class="btn-categoria" data-categoria="accesorios">Accesorios</button></li>
+            <li><a href="index.html#Contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="catalogo">
+            <!-- Título dinámico -->
+            <div id="hero-catalogo" class="hero-categoria">
+                <div class="overlay"></div> <!-- Usamos tu misma clase overlay para oscurecer la foto -->
+                <h2 id="titulo-categoria">Cargando catálogo...</h2>
+            </div>
+            
+            <!-- Contenedor para las solapas (filtros) -->
+            <div id="contenedor-solapas" class="solapas-container">
+                <!-- JS inyectará los botones aquí -->
+            </div>
+
+            <!-- Contenedor para los productos -->
+            <div id="contenedor-productos" class="productos-grid">
+                <!-- JS inyectará las tarjetas aquí -->
+            </div>
+        </section>
+
+        <!-- PANEL DEL CARRITO DE COMPRAS -->
+        <aside id="carrito-sidebar" class="carrito-oculto">
+            <div class="carrito-header">
+                <h3>Tu Carrito</h3>
+                <!-- Botón para cerrar el carrito -->
+                <button id="cerrar-carrito" class="btn-cerrar">X</button>
+            </div>
+            
+            <div id="carrito-items" class="carrito-items">
+                <!-- JS inyectará los productos seleccionados aquí -->
+                <p style="text-align: center; color: var(--color-texto-mutado);">El carrito está vacío</p>
+            </div>
+            
+            <div class="carrito-footer">
+                <div class="carrito-total">
+                    <span>Total:</span>
+                    <span id="carrito-total-precio">$0.00</span>
+                </div>
+                <button id="btn-finalizar-compra" class="btn-primario" style="width: 100%;">Finalizar Compra</button>
+            </div>
+        </aside>
+
+        <!-- Botón flotante para abrir el carrito -->
+        <button id="btn-abrir-carrito" class="btn-flotante-carrito">
+            🛒 <span id="contador-carrito">0</span>
+        </button>  
+    </main>
+    
+    <script src="script-catalogo.js"></script>
+</body>
+</html>

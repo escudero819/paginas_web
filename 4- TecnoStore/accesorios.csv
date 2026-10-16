@@ -1,0 +1,7 @@
+tipo;nombre;imagen;descripcion;precio;stock
+Audio;AirPods Pro 2;images/airpods.jfif;Auriculares con cancelación de ruido activa.;250;12
+Audio;JBL Flip 6;images/jbl.jfif;Parlante Bluetooth portátil resistente al agua.;130;22
+Cables;Cable USB-C Anker 100W;images/cable-c.jfif;Carga ultrarrápida trenzado en nylon.;20;100
+Cables;Adaptador HDMI a USB-C;images/hdmi.jfif;Conectá tu notebook a monitores externos.;15;0
+Fundas;Funda Spigen iPhone 15 Pro;images/funda-spigen.jfif;Máxima protección contra caídas (Military Grade).;25;40
+Fundas;Funda magnética iPad Air;images/funda-ipad.jfif;Soporte plegable y encendido automático.;35;15

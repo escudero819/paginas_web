@@ -1,0 +1,752 @@
+/* =========================================
+   VARIABLES DE COLOR (DARK THEME TECH)
+   ========================================= */
+:root {
+    --color-primario: #0b0f19; /* Casi negro para Navbar y Footer */
+    --color-secundario: #1f2937; /* Gris oscuro para las tarjetas de productos */
+    --color-acento: #00b4d8; /* Cian eléctrico para botones y brillos */
+    --color-fondo: #111827; /* Gris azulado muy oscuro para el fondo general */
+    --color-texto: #f3f4f6; /* Blanco humo para que no lastime la vista */
+    --color-texto-mutado: #9ca3af; /* Gris claro para textos secundarios/precios viejos */
+}
+
+body {
+    background-color: var(--color-fondo);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: var(--color-texto);
+    margin: 0;
+    padding: 0;
+}
+
+/* ================= HEADER ================= */
+.canva-header {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Es mejor usar vh para que se adapte al tamaño del monitor */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: slideshow 15s infinite ease-in-out;
+}
+
+.bg-slide:nth-child(1) { animation-delay: 0s; }
+.bg-slide:nth-child(2) { animation-delay: 5s; }
+.bg-slide:nth-child(3) { animation-delay: 10s; }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+}
+
+.header-content h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+@keyframes slideshow {
+    0% { opacity: 0; transform: scale(1); }
+    10% { opacity: 1; }
+    33% { opacity: 1; }
+    43% { opacity: 0; transform: scale(1.05); }
+    100% { opacity: 0; }
+}
+
+/* ================= NAV ================= */
+nav {
+    background-color: var(--color-primario);
+    padding: 15px 0;
+    position: sticky; /* Corrección técnica fundamental */
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--color-acento);
+}
+
+/* ================= SECCIONES GLOBALES ================= */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: whitesmoke;
+}
+
+/* ================= SECCIÓN INICIO (Presentación) ================= */
+
+.seccion-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Línea divisoria sutil */
+    padding: 0px 20px;
+    margin: 60px auto;
+}
+
+.contenido-intro {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.imagen-intro {
+    width: 60%;
+    height: auto;
+}
+
+.imagen-intro img {
+    border-radius: 10px;
+    border: 3px solid #012931;
+    transition: border-color 0.5s ease, transform 0.5s ease;
+}
+
+.imagen-intro:hover img {
+    border-color: var(--color-acento);
+    transform: scale(1.05);
+}
+
+.seccion-intro h2 {
+    margin: 0;
+}
+
+.intro-descripcion {
+    font-size: 1.2rem;
+    max-width: 700px; /* Evita que el texto cruce toda la pantalla */
+    line-height: 1.6;
+    color: var(--color-texto-mutado);
+    margin: 0 0 10px 0;
+}
+
+/* Efecto Tech para la ubicación */
+.badge-ubicacion {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-secundario); 
+    border: 1px solid var(--color-acento);
+    color: var(--color-acento);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.intro-botones {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+/* Botones de acción generalizados para todo el sitio */
+.btn-primario {
+    background-color: var(--color-acento);
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-primario:hover {
+    background-color: #0096b4;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 180, 216, 0.4);
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: var(--color-texto);
+    border: 2px solid var(--color-texto);
+    padding: 10px 28px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-secundario:hover {
+    background-color: var(--color-texto);
+    color: var(--color-primario);
+    transform: scale(1.05);
+}
+
+/* ================= ADAPTACIÓN A MÓVILES ================= */
+@media (max-width: 768px) {
+    .intro-botones {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .intro-botones a {
+        text-align: center;
+    }
+}
+
+/* ================= PRODUCTOS (Categorías) ================= */
+.productos-sec {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    /* Eliminamos el height: 80vh para que sea responsivo real */
+}
+
+.productos-art {
+    background-color: var(--color-secundario);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* CRÍTICO: Evita que el contenido desborde los bordes redondeados */
+}
+
+.productos-art:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 180, 216, 0.3); 
+    border-color: var(--color-acento);
+}
+
+/* El encabezado de la tarjeta */
+.productos-art .titulo {
+    background-color: #2c3b50;
+    width: 100%;
+    padding: 20px 0; /* Usamos padding en vez de height: 20% */
+    text-align: center;
+    z-index: 10; /* Se asegura de estar siempre por encima de la animación */
+}
+
+.productos-art .titulo h3 {
+    margin: 0;
+    color: var(--color-texto);
+    font-size: 1.5rem;
+}
+
+/* Contenedor relativo donde ocurre la animación */
+.interaccion-wrapper {
+    position: relative;
+    height: 250px; /* Altura fija para la zona de interacción */
+    width: 100%;
+    background-color: var(--color-fondo); /* Fondo visible cuando se va la imagen */
+}
+
+/* La imagen que se "enrollará" */
+.imagen-categoria {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--color-secundario);
+    transition: height 0.5s ease-in-out; /* Transición suave de la altura */
+    z-index: 2; /* Tapando a la descripción */
+}
+
+/* Al hacer hover en el article, la altura de la imagen pasa a 0 */
+.productos-art:hover .imagen-categoria {
+    height: 0%;
+}
+
+/* La descripción que "baja" */
+.descripcion-categoria {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1; /* Detrás de la imagen */
+    
+    /* Estado inicial: un poco más arriba y transparente */
+    transform: translateY(-20px); 
+    opacity: 0;
+    
+    /* Le damos un pequeño "delay" (0.15s) para que espere a que la imagen empiece a subir */
+    transition: transform 0.5s ease-in-out 0.15s, opacity 0.5s ease-in-out 0.15s;
+}
+
+/* Al hacer hover, la descripción cae a su lugar y se vuelve visible */
+.productos-art:hover .descripcion-categoria {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.btn-comprar {
+    background-color: var(--color-acento); /* Botón llamativo */
+    color: #000; /* Texto oscuro para contrastar con el botón cian */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+}
+
+.btn-comprar:hover {
+    background-color: #012931; /* Un cian un poco más oscuro al pasar el mouse */
+    color: white;
+}
+
+/* ================= OFERTAS ================= */
+.oferta-destacada {
+    background-color: var(--color-secundario);
+    border: 2px solid #420027;
+    border-radius: 12px;
+    max-width: 900px; /* Ampliamos el ancho máximo para que entren ambas columnas cómodamente */
+    margin: 0 auto;
+    display: flex; /* Magia: divide el contenido en columnas automáticamente */
+    align-items: center; /* Centra verticalmente ambos lados */
+    overflow: hidden; /* Asegura que la imagen no se escape de los bordes redondeados */
+    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.15); /* Le damos un resplandor rojo sutil al fondo oscuro */
+}
+
+.oferta-imagen {
+    flex: 1; /* Toma el 50% del espacio */
+    position: relative;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Fondo ligeramente más claro que la tarjeta para que el producto resalte como en una vitrina */
+    background: radial-gradient(circle, #2d3748 0%, var(--color-secundario) 100%); 
+}
+
+.oferta-imagen img {
+    width: 100%;
+    max-width: 375px;
+    object-fit: contain;
+    transition: transform 0.5s ease; /* Prepara el terreno para el zoom */
+}
+
+/* Efecto zoom atractivo al pasar el mouse por toda la tarjeta de oferta */
+.oferta-destacada:hover .oferta-imagen img {
+    transform: scale(1.1) rotate(-5deg); /* Crece un 10% y se inclina ligeramente */
+}
+
+.badge-descuento {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #ef4444;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
+}
+
+.oferta-info {
+    flex: 1; /* Toma el otro 50% del espacio */
+    padding: 40px;
+    text-align: left; /* Alineamos a la izquierda para mejor lectura en bloques anchos */
+}
+
+.oferta-info h3 {
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--color-texto);
+}
+
+.oferta-info p {
+    color: var(--color-texto-mutado);
+    line-height: 1.6;
+}
+
+.precios {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+    margin: 25px 0;
+}
+
+.precio-viejo {
+    text-decoration: line-through;
+    color: var(--color-texto-mutado);
+    font-size: 1.2rem;
+}
+
+.precio-nuevo {
+    color: #ef4444;
+    font-size: 2.5rem; /* Hacemos el precio nuevo mucho más grande */
+    font-weight: bold;
+}
+
+/* ================= ADAPTACIÓN A CELULARES ================= */
+@media (max-width: 768px) {
+    .oferta-destacada {
+        flex-direction: column; /* Apila la imagen arriba y el texto abajo */
+    }
+    
+    .oferta-imagen {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .oferta-info {
+        text-align: center; /* Volvemos a centrar el texto en celular */
+        padding: 30px 20px;
+    }
+    
+    .precios {
+        justify-content: center;
+    }
+}
+/* ================= FORMULARIO CONTACTO ================= */
+.formulario-contacto {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulario-contacto input, 
+.formulario-contacto textarea {
+    padding: 15px;
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    border: 1px solid var(--color-texto-mutado);
+    border-radius: 6px;
+    font-family: inherit;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto cuando el usuario hace clic para escribir */
+.formulario-contacto input:focus, 
+.formulario-contacto textarea:focus {
+    outline: none;
+    border-color: var(--color-acento);
+    box-shadow: 0 0 8px rgba(0, 180, 216, 0.4);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 40px 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    gap: 20px;
+}
+
+/* ================= HERO DEL CATÁLOGO DINÁMICO ================= */
+.hero-categoria {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items:start;
+    padding-top: 30px;
+    margin-bottom: 40px;
+    background-size: cover;
+    background-position: center -100px;
+    background-color: var(--color-secundario); /* Color de respaldo por si tarda en cargar la foto */
+    box-shadow: 6px 12px 24px rgb(29, 0, 29);
+}
+
+.hero-categoria h2 {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    font-size: 3.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+
+/* ================= CATÁLOGO Y SOLAPAS ================= */
+
+.btn-categoria {
+    background-color: transparent;
+    color: var(--color-texto);
+    cursor:default;
+    border: none;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.btn-categoria:hover {
+    color:#00b4d8;
+}
+
+.solapas-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.btn-solapa {
+    background-color: transparent;
+    color: var(--color-texto);
+    border: 1px solid var(--color-texto-mutado);
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-solapa:hover {
+    border-color: var(--color-acento);
+    color: var(--color-acento);
+}
+
+.btn-solapa.activo {
+    background-color: var(--color-acento);
+    color: #000;
+    border-color: var(--color-acento);
+}
+
+/* ================= GRID DE PRODUCTOS ================= */
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    text-align: left; /* Alineamos info de producto a la izquierda */
+}
+
+.producto-card {
+    background-color: var(--color-secundario);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.img-prod-container {
+    height: 200px;
+    background-color: #2c3b50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-prod-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.info-prod-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Permite que empuje el botón al fondo si las descripciones tienen distinto largo */
+    justify-content: space-between;
+}
+
+/* ================= CARRITO DE COMPRAS ================= */
+#carrito-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100vh;
+    background-color: var(--color-secundario);
+    border-left: 1px solid var(--color-acento);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Clase dinámica que JS usará para esconder el carrito */
+.carrito-oculto {
+    transform: translateX(100%);
+}
+
+.carrito-header {
+    padding: 20px;
+    background-color: var(--color-primario);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.carrito-header h3 { margin: 0; }
+
+.btn-cerrar {
+    background: none;
+    border: none;
+    color: var(--color-texto);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.btn-cerrar:hover { color: #ef4444; }
+
+.carrito-items {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Permite scroll si hay muchos productos */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.item-carrito {
+    background-color: var(--color-fondo);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.carrito-footer {
+    padding: 20px;
+    background-color: var(--color-primario);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.carrito-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--color-acento);
+}
+
+/* Botón flotante */
+.btn-flotante-carrito {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--color-acento);
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4);
+    z-index: 999;
+    transition: transform 0.3s;
+}
+
+.btn-flotante-carrito:hover { transform: scale(1.1); }
+
+#contador-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ef4444;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Botón para quitar elementos del carrito */
+.btn-eliminar-item {
+    background-color: transparent;
+    color: #ef4444; /* Rojo alerta */
+    border: 1px solid #ef4444;
+    border-radius: 4px;
+    padding: 2px 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-eliminar-item:hover {
+    background-color: #ef4444;
+    color: white;
+}

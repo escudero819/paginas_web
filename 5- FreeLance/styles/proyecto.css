@@ -1,0 +1,135 @@
+/* ================= HERO DEL PROYECTO ================= */
+.proyecto-hero {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Ocupa la mitad de la pantalla */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end; /* Alinea el título abajo */
+    padding: 0 50px 50px 50px;
+}
+
+.overlay-hero {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, var(--bg-oscuro) 0%, rgba(10, 10, 12, 0.2) 100%);
+    z-index: 1;
+}
+
+.titulo-flotante {
+    position: relative;
+    z-index: 2;
+    font-size: 3.5rem;
+    color: var(--color-texto);
+    margin: 0;
+}
+
+.texto-rojo {
+    color: var(--color-rojo);
+}
+
+/* ================= SPLIT 40/60 ================= */
+.split-descripcion-galeria {
+    display: grid;
+    grid-template-columns: 4fr 6fr; /* Exactamente 40% y 60% */
+    gap: 50px;
+    margin: 60px 0;
+    align-items: start;
+}
+
+.bloque-descripcion h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.bloque-descripcion p {
+    color: var(--color-texto-mutado);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.05);
+    border-color: var(--color-morado);
+}
+
+/* ================= FICHA TÉCNICA ================= */
+.ficha-tecnica {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+.ficha-card {
+    background-color: var(--bg-tarjetas);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-span-full {
+    grid-column: 1 / -1; /* Ocupa todo el ancho disponible */
+}
+
+.ficha-card h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+/* Detalles visuales con los colores requeridos */
+.borde-morado { border-bottom: 2px solid var(--color-morado); }
+.borde-rojo { border-bottom: 2px solid var(--color-rojo); }
+
+.ficha-card ul {
+    list-style-position: inside;
+    color: var(--color-texto-mutado);
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag-herramienta {
+    background-color: rgba(124, 58, 237, 0.1); /* Morado transparente */
+    color: var(--color-morado);
+    border: 1px solid var(--color-morado);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.tag-blanda {
+    background-color: rgba(225, 29, 72, 0.1); /* Rojo transparente */
+    color: var(--color-rojo);
+    border: 1px solid var(--color-rojo);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+    .split-descripcion-galeria {
+        grid-template-columns: 1fr; /* Colapsa a 1 columna en celulares */
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "id": "conoce-mundo",
+    "titulo": "Conoce el Mundo",
+    "imagenHero": "../images/hero-CeM.jpg",
+    "descripcion": "proyecto de programacion con integracion de IA y Base de datos. Se trata de una camara con IA integrada capaz de reconocer gestos de la mano para controlar un HUI con un mapamundi y de cierta forma 'entrar' al pais y ver distintas secciones de informacion a cerca de dicho pais, toda la informacion proveniente de una BD propia",
+    "galeria": [
+        "../images/CeM-1.jpg", 
+        "../images/CeM-2.jpg", 
+        "../images/CeM-3.jpg"
+    ],
+    "equipo": ["Matías Nehuen Gil Barbosa", "Mario Bautista Ortega", "Tomas Magnano", "Tobias Tohane"],
+    "roles": ["lider de proyecto", "Desarrollador de HUI", "PM"],
+    "contribucion": "Fui el encargado de programar toda la parte del mapamundi y la integracion de la IA en la camara, ademas de calibrar la misma a los gestos de las manos. Tambien me encargue de combinar los archivos de API de BD a la seccion de informacion y su muestreo al usuario, es decir, el frontend.",
+    "herramientas": ["Python", "matplotlib", "open-cv", "reconocimiento con IA", "Git"],
+    "blandas": ["Liderazgo técnico", "Tolerancia a la frustración", "Comunicación asertiva en equipo"]
+}

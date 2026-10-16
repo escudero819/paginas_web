@@ -393,7 +393,7 @@ article:hover {
 /* Etiqueta de Promoción */
 .badge-promo {
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: -10px;
     background-color: rgb(179, 66, 1); /* Tu naranja característico */
     color: white;

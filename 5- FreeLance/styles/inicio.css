@@ -1,0 +1,280 @@
+/* ================= HERO SECTION ================= */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1a1a2e 0%, var(--bg-oscuro) 70%);
+    padding-top: 80px;
+}
+
+.etiqueta-tech {
+    background-color: rgba(225, 29, 72, 0.1);
+    color: var(--color-rojo);
+    border: 1px solid var(--color-rojo);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.resaltado-morado {
+    background: linear-gradient(90deg, var(--color-morado), var(--color-rojo));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content h4 {
+    font-size: 1.5rem;
+    color: var(--color-texto-mutado);
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.hero-botones {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-primario, .btn-secundario {
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-primario {
+    background-color: var(--color-morado);
+    color: white;
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.4);
+}
+
+.btn-primario:hover {
+    background-color: var(--color-morado-oscuro);
+    box-shadow: 0 0 25px rgba(124, 58, 237, 0.6);
+}
+
+.btn-secundario {
+    border: 1px solid var(--color-texto-mutado);
+    color: var(--color-texto);
+}
+
+.btn-secundario:hover {
+    border-color: var(--color-rojo);
+    color: var(--color-rojo);
+}
+
+
+/* ================= SECCIÓN SOBRE MÍ ================= */
+.perfil-grid {
+    display: grid;
+    /* La magia: 1 fracción para la foto, 2 fracciones para el texto */
+    grid-template-columns: 1fr 2fr; 
+    gap: 60px;
+    align-items: center; /* Centra verticalmente ambos lados */
+}
+
+/* --- Estilos de la Foto --- */
+.perfil-foto {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.perfil-foto img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px; /* Bordes ligeramente redondeados */
+    border: 2px solid var(--color-morado);
+    position: relative;
+    z-index: 2;
+    /* Efecto "Glow" oscuro */
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.2); 
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.perfil-foto img:hover {
+    transform: scale(1.025);
+    box-shadow: 0 10px 40px rgba(225, 29, 72, 0.3); /* Cambia al resplandor rojo al pasar el mouse */
+    border-color: var(--color-rojo);
+}
+
+/* --- Estilos del Contenido Derecho --- */
+.perfil-contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Separación entre los párrafos y las habilidades */
+}
+
+.perfil-texto p {
+    color: var(--color-texto-mutado);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.perfil-texto strong {
+    color: var(--color-texto); /* Resalta el texto importante en blanco brillante */
+}
+
+.habilidades-blandas h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--color-texto);
+}
+
+/* --- Estética Cyber/Tech para la lista --- */
+.lista-tech {
+    list-style: none; /* Quitamos las viñetas por defecto del navegador */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.lista-tech li {
+    color: var(--color-texto-mutado);
+    display: flex;
+    align-items: center;
+    font-size: 1.05rem;
+}
+
+/* Insertamos una flecha con CSS antes de cada item de la lista */
+.lista-tech li::before {
+    content: '▹'; 
+    color: var(--color-rojo);
+    font-size: 1.5rem;
+    margin-right: 12px;
+    line-height: 0;
+}
+
+/* ================= ADAPTACIÓN A CELULARES ================= */
+@media (max-width: 768px) {
+    .perfil-grid {
+        grid-template-columns: 1fr; /* Apila la foto arriba y el texto abajo */
+        text-align: center;
+    }
+    
+    .perfil-foto img {
+        max-width: 250px;
+    }
+    
+    .lista-tech {
+        text-align: left; /* La lista siempre debe quedar a la izquierda por legibilidad */
+    }
+}
+
+
+/* ================= ESTRUCTURAS GENERALES ================= */
+.seccion-oscura {
+    background-color: var(--bg-oscuro);
+    padding: 100px 0;
+}
+
+.seccion-clara {
+    background-color: var(--bg-tarjetas);
+    padding: 100px 0;
+}
+
+.titulo-seccion {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.titulo-seccion::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-rojo);
+}
+
+/* ================= GRIDS & CARDS ================= */
+.grid-tres-columnas, .proyectos-grid {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-investigacion, .card-proyecto {
+    background-color: var(--bg-oscuro);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-investigacion:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-morado);
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.1);
+}
+
+.card-proyecto:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-rojo);
+    box-shadow: 0 10px 30px rgba(225, 29, 72, 0.1);
+}
+
+.tag-lenguaje {
+    color: var(--color-rojo);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-proyecto h3, .card-investigacion h3 {
+    margin: 10px 0 15px 0;
+    font-size: 1.4rem;
+}
+
+.card-proyecto p, .card-investigacion p {
+    color: var(--color-texto-mutado);
+    font-size: 0.95rem;
+}
+
+/* ================= HABILIDADES (BARRAS) ================= */
+.habilidades-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.barra-progreso {
+    margin-bottom: 20px;
+}
+
+.fondo-barra {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 4px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.progreso {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.progreso.morado { background-color: var(--color-morado); }
+.progreso.rojo { background-color: var(--color-rojo); }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto | Matías Gil</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/proyecto.css">
+</head>
+<body class="body-proyecto">
+    <!-- Navegación simplificada -->
+    <nav>
+        <div class="logo">MNG.</div>
+        <ul>
+            <li><a href="index.html">← Volver al Portafolio</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER: Imagen y Título superpuesto -->
+    <header id="proyecto-hero" class="proyecto-hero">
+        <div class="overlay-hero"></div>
+        <h1 id="proyecto-titulo" class="titulo-flotante">Cargando proyecto...</h1>
+    </header>
+
+    <main class="contenedor">
+        <!-- SECCIÓN 40/60: Descripción y Galería -->
+        <section class="split-descripcion-galeria">
+            <div class="bloque-descripcion">
+                <h2>¿Qué es <span id="nombre-proyecto-span" class="texto-rojo">...</span>?</h2>
+                <p id="proyecto-desc"></p>
+            </div>
+            <div class="bloque-galeria">
+                <!-- CSS Grid creará una galería automática aquí -->
+                <div id="proyecto-galeria" class="galeria-grid"></div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: Ficha Técnica (Roles, Herramientas, etc.) -->
+        <section class="ficha-tecnica">
+            <div class="ficha-card">
+                <h3 class="borde-morado">Integrantes</h3>
+                <ul id="lista-equipo"></ul>
+            </div>
+            
+            <div class="ficha-card">
+                <h3 class="borde-rojo">Roles Asumidos</h3>
+                <ul id="lista-roles"></ul>
+            </div>
+
+            <div class="ficha-card">
+                <h3 class="borde-morado">Mi Contribución</h3>
+                <p id="texto-contribucion"></p>
+            </div>
+
+            <div class="ficha-card">
+                <h3 class="borde-rojo">Herramientas</h3>
+                <div id="tags-herramientas" class="tags-container"></div>
+            </div>
+
+            <div class="ficha-card card-span-full">
+                <h3 class="borde-morado">Aprendizajes Blandos</h3>
+                <div id="tags-blandas" class="tags-container"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script-proyecto.js"></script>
+</body>
+</html>

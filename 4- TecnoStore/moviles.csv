@@ -1,0 +1,5 @@
+tipo;nombre;imagen;descripcion;precio;stock
+Smartphones;iPhone 15 Pro;images/iphone.jfif;Chip A17 Pro y cámara de 48MP.;1200;10
+Smartphones;Samsung Galaxy S24;images/samsung.jfif;Inteligencia artificial integrada.;1000;15
+Tablets;iPad Air 5;images/ipad.jfif;Potencia y portabilidad con chip M1.;600;8
+Smartwatches;Apple Watch Series 9;images/watch.jfif;Monitoreo avanzado de salud.;400;20
