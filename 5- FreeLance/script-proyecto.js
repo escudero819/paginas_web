@@ -33,11 +33,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 ulRoles.innerHTML += `<li>${rol}</li>`;
             });
 
-            // 5. Inyectar Galería de Imágenes
+            // 5. Inyectar Galería de Imágenes (Ahora como Carrusel)
             const contenedorGaleria = document.getElementById('proyecto-galeria');
-            proyecto.galeria.forEach(imgSrc => {
-                contenedorGaleria.innerHTML += `<img src="${imgSrc}" alt="Captura del proyecto">`;
+            
+            proyecto.galeria.forEach((imgSrc, index) => {
+                // A la primera imagen (índice 0) le ponemos la clase 'activo' por defecto
+                const esPrimera = index === 0 ? 'activo' : '';
+                contenedorGaleria.innerHTML += `<img src="${imgSrc}" class="slide ${esPrimera}" alt="Captura del proyecto">`;
             });
+
+            // 5.1 Iniciar la animación del Carrusel
+            const slides = document.querySelectorAll('.slide');
+            let slideActual = 0;
+
+            // Solo iniciamos el temporizador si el proyecto tiene más de 1 imagen
+            if (slides.length > 1) {
+                setInterval(() => {
+                    // 1. Le quitamos la clase 'activo' a la imagen actual (se desvanece)
+                    slides[slideActual].classList.remove('activo');
+                    
+                    // 2. Calculamos cuál es la siguiente. 
+                    // El operador % (módulo) hace la magia: si hay 3 imágenes (0, 1, 2), al sumar 1 al índice 2, vuelve a dar 0.
+                    slideActual = (slideActual + 1) % slides.length;
+                    
+                    // 3. Le ponemos la clase 'activo' a la nueva imagen (aparece)
+                    slides[slideActual].classList.add('activo');
+                }, 4000); // Cambia de diapositiva cada 4 segundos (4000 milisegundos)
+            }
 
             // 6. Inyectar Etiquetas (Tags)
             const contenedorHerramientas = document.getElementById('tags-herramientas');
