@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
     <title>TechnoStore</title>
 </head>
 <body>
     <header class="canva-header" id="Inicio">
         <!-- Capas de fondo (puedes añadir las imágenes o colores que quieras) -->
-        <div class="bg-slide" style="background-image: url('../4- TecnoStore/images/header-general.jfif');"></div>
-        <div class="bg-slide" style="background-image: url('../4- TecnoStore/images/header-escritorio.jfif');"></div>
-        <div class="bg-slide" style="background-image: url('../4- TecnoStore/images/header-sala.jfif');"></div>
+        <div class="bg-slide" style="background-image: url('{{ url_for('static', filename='images/header-general.jfif') }}');"></div>
+        <div class="bg-slide" style="background-image: url('{{ url_for('static', filename='images/header-escritorio.jfif') }}');"></div>
+        <div class="bg-slide" style="background-image: url('{{ url_for('static', filename='images/header-sala.jfif') }}');"></div>
         
         <!-- Filtro oscuro opcional para que el título resalte más -->
         <div class="overlay"></div>
@@ -62,7 +62,7 @@
         </div>
 
         <div class="imagen-intro">
-            <img src="images/tienda.jfif" alt="imagen de presentacion">
+            <img src="{{ url_for('static', filename='images/tienda.jfif') }}" alt="imagen de presentacion">
         </div>
 
     </section>
@@ -79,7 +79,7 @@
                     
                     <div class="interaccion-wrapper">
                         <!-- Esta imagen se enrollará hacia arriba -->
-                        <div class="imagen-categoria" style="background-image: url('images/celulares.jfif');"></div>
+                        <div class="imagen-categoria" style="background-image: url('{{ url_for('static', filename='images/celulares.jfif') }}');"></div>
                         
                         <!-- Esta descripción bajará cuando la imagen se vaya -->
                         <div class="descripcion-categoria">
@@ -95,7 +95,7 @@
                         <h3>Smart Home</h3>
                     </div>
                     <div class="interaccion-wrapper">
-                        <div class="imagen-categoria" style="background-image: url('images/smarthome.webp');"></div>
+                        <div class="imagen-categoria" style="background-image: url('{{ url_for('static', filename='images/smarthome.webp') }}');"></div>
                         <div class="descripcion-categoria">
                             <p>Automatizá tu hogar. Luces, asistentes virtuales y seguridad inteligente a tu alcance.</p>
                             <a href="catalogo.html?cat=smarthome" class="btn-comprar" style="text-decoration: none; text-align: center; width: 60%;">Ver catálogo</a>
@@ -109,7 +109,7 @@
                         <h3>Accesorios</h3>
                     </div>
                     <div class="interaccion-wrapper">
-                        <div class="imagen-categoria" style="background-image: url('images/accesorios.webp');"></div>
+                        <div class="imagen-categoria" style="background-image: url('{{ url_for('static', filename='images/accesorios.webp') }}');"></div>
                         <div class="descripcion-categoria">
                             <p>Periféricos, cables, fundas y todo lo que necesitás para potenciar tu experiencia.</p>
                             <a href="catalogo.html?cat=accesorios" class="btn-comprar" style="text-decoration: none; text-align: center; width: 60%;">Ver catálogo</a>
@@ -129,7 +129,7 @@
                 <!-- Etiqueta flotante de descuento -->
                 <span class="badge-descuento">-25%</span>
                 <!-- Recordá usar una imagen con fondo transparente (PNG o WebP) -->
-                <img src="images/auriculares.jfif" alt="Auriculares Inalámbricos Pro">
+                <img src="{{ url_for('static', filename='images/auriculares.jfif') }}" alt="Auriculares Inalámbricos Pro">
             </div>
             
             <!-- Columna Derecha: Información -->
@@ -150,10 +150,10 @@
 
     <section id="Contacto">
         <h2>Contacto</h2>
-        <form class="formulario-contacto">
-            <input type="text" placeholder="Nombre completo" required>
-            <input type="email" placeholder="Correo electrónico" required>
-            <textarea rows="4" placeholder="Tu consulta..." required></textarea>
+        <form class="formulario-contacto" id="form-contacto">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <textarea name="consulta" rows="4" placeholder="Tu consulta..." required></textarea>
             <button type="submit" class="btn-comprar">Enviar mensaje</button>
         </form>
     </section>
@@ -175,16 +175,31 @@
 
     <script>
         // Capturamos el formulario de contacto usando su clase
-        const formContacto = document.querySelector('.formulario-contacto');
+        const formContacto = document.getElementById('form-contacto');
         
         if(formContacto) {
-            formContacto.addEventListener('submit', function(e) {
+            formContacto.addEventListener('submit', async (e) => {
                 e.preventDefault(); // Evitamos la recarga
                 
-                // En un proyecto real, aquí enviaríamos los datos a un servidor (Backend)
-                alert("¡Mensaje recibido! Un especialista de TechnoStore analizará tu consulta y te responderá en breve.");
-                
-                this.reset(); // Limpiamos los campos
+                try {
+                    const respuesta = await fetch("/agregar_consulta", {
+                        method: "POST",
+                        body: new FormData(formContacto)
+                    });
+                    const resultado = await respuesta.json()
+                    if (!respuesta.ok) {
+                        throw new Error (
+                            resultado.error || "no se pudo enviar la consulta"
+                        );
+                    }
+
+                    alert(resultado.mensaje);
+
+                } catch (error) {
+                    alert("Error: " + error.message);
+                }
+
+                formContacto.reset(); // Limpiamos el formulario
             });
         }
     </script>

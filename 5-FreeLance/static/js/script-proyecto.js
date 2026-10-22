@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. Cargar el JSON dinámicamente usando Fetch
-    fetch(`jsons/${proyectoId}.json`)
+    fetch(`/static/jsons/${proyectoId}.json`)
         .then(res => {
             if (!res.ok) throw new Error("No se encontró el archivo JSON");
             return res.json(); // Transformación mágica directa a Objeto JavaScript
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // 3. Inyectar datos simples
             document.getElementById('proyecto-titulo').innerText = proyecto.titulo;
             document.getElementById('nombre-proyecto-span').innerText = proyecto.titulo;
-            document.getElementById('proyecto-hero').style.backgroundImage = `url('${proyecto.imagenHero}')`;
+            document.getElementById('proyecto-hero').style.backgroundImage = `url('/static/${proyecto.imagenHero}')`;
             document.getElementById('proyecto-desc').innerText = proyecto.descripcion;
             document.getElementById('texto-contribucion').innerText = proyecto.contribucion;
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             proyecto.galeria.forEach((imgSrc, index) => {
                 // A la primera imagen (índice 0) le ponemos la clase 'activo' por defecto
                 const esPrimera = index === 0 ? 'activo' : '';
-                contenedorGaleria.innerHTML += `<img src="${imgSrc}" class="slide ${esPrimera}" alt="Captura del proyecto">`;
+                contenedorGaleria.innerHTML += `<img src="/static/${imgSrc}" class="slide ${esPrimera}" alt="Captura del proyecto">`;
             });
 
             // 5.1 Iniciar la animación del Carrusel

@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tituloCategoria.innerText = "Categoría no encontrada";
         return; 
     }
+    
 
     // 3. FUNCIÓN MAESTRA: Carga todo lo relacionado a una categoría
     function cargarVistaCategoria(catId) {
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        fetch('categorias.csv')
+        fetch('/static/data/categorias.csv')
             .then(res => res.text())
             .then(csv => {
                 const lineas = csv.split('\n').filter(linea => linea.trim() !== '');
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Actualizamos Título y Fondo
                     tituloCategoria.innerText = configuracionEncontrada.titulo;
                     if (configuracionEncontrada.imagenHeader) {
-                        heroCatalogo.style.backgroundImage = `url('${configuracionEncontrada.imagenHeader}')`;
+                        heroCatalogo.style.backgroundImage = `url('/static/${configuracionEncontrada.imagenHeader}')`;
                     }
 
                     // Reconstruimos las solapas inferiores
@@ -77,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. CARGAR PRODUCTOS DEL CSV
     function cargarProductosCSV(archivoCSV) {
-        fetch(archivoCSV)
+        fetch(`/static/data/${archivoCSV}`)
             .then(res => res.text())
             .then(csv => {
                 const lineas = csv.split('\n').filter(linea => linea.trim() !== '');
@@ -114,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             htmlAcumulado += `
                 <article class="producto-card">
                     <div class="img-prod-container">
-                        <img src="${prod.imagen}" alt="${prod.nombre}" onerror="this.style.display='none'">
+                        <img src="/static/${prod.imagen}" alt="${prod.nombre}" onerror="this.style.display='none'">
                     </div>
                     <div class="info-prod-container">
                         <span style="font-size: 0.8rem; color: var(--color-acento); text-transform: uppercase;">${prod.tipo}</span>
@@ -254,6 +255,52 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderizarProductos(tipo);
             });
         });
+    }
+
+    
+
+    // ==========================================
+    // 8. FUNCIONES DE COMPRA Y VACIADO DEL CARRITO
+    // ==========================================
+    const btnCompra = document.getElementById('btn-finalizar-compra');
+    btnCompra.addEventListener('click', ComprarCarrito);
+
+    function VaciarCarrito() {
+        carritoMemoria = [];
+        actualizarVistaCarrito();
+    }
+
+    async function ComprarCarrito() {
+        if (carritoMemoria.length === 0) {
+            alert("El carrito está vacío. Agrega productos antes de comprar.");
+            return;
+        }
+
+        const totalCalculado = carritoMemoria.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+
+        try {
+            const respuesta = await fetch("/agregar_compra", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    compras: carritoMemoria,
+                    total: totalCalculado
+                })
+            });
+            
+            const resultado = await respuesta.json();
+            if (!respuesta.ok) {
+                throw new Error(resultado.error || "Error en el servidor.");
+            }
+            
+            alert(resultado.mensaje);
+            sidebarCarrito.classList.add('carrito-oculto');
+            VaciarCarrito();
+        } catch (error) {
+            alert(error.message || "No se pudo procesar la compra.");
+        }
     }
 
     // ==========================================

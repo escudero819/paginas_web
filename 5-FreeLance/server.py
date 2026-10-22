@@ -14,6 +14,15 @@ CAMPOS = ["nombre", "especialidad", "claves", "contenido"]
 def inicio():
     return render_template("index.html")
 
+
+@server.route("/proyecto.html")
+def proyecto():
+    return render_template("proyecto.html")
+
+@server.route("/index.html")
+def index():
+    return render_template("index.html")
+
 @server.route("/agregar", methods=["POST"])
 def agregar_registro():
     # Datos recibidos del formulario
