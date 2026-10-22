@@ -1,12 +1,12 @@
 {
     "id": "problema-presion",
     "titulo": "Un Problema de Presión",
-    "imagenHero": "images/hero-presion.jpg",
+    "imagenHero": "images/hero-presion.png",
     "descripcion": "Videojuego estilo Escape Room 2D Top-Down donde un ingeniero debe escapar de 4 salas temáticas superando desafíos lógicos y matemáticos. El desarrollo se centró en crear una experiencia inmersiva mediante puzzles integrados en el entorno.",
     "galeria": [
-        "images/presion-1.jpg", 
-        "images/presion-2.jpg", 
-        "images/presion-3.jpg"
+        "images/presion-1.png", 
+        "images/presion-2.png", 
+        "images/presion-3.png"
     ],
     "equipo": ["Matías Nehuen Gil Barbosa", "Mario Bautista Ortega"],
     "roles": ["Desarrollador Principal", "Diseñador de Lógica", "Pixel Artist"],

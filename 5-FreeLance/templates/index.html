@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matías Gil | Desarrollador Web & IA</title>
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/inicio.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/inicio.css') }}">
 </head>
 <body>
     <nav>
@@ -42,7 +42,7 @@
                 <div class="perfil-grid">
                     <!-- NUEVO: Columna Izquierda (Foto) -->
                     <div class="perfil-foto">
-                        <img src="images/foto-perfil.jpeg" alt="Matías Gil Barbosa - Desarrollador Web">
+                        <img src="{{ url_for('static', filename='images/foto-perfil.jpeg') }}" alt="Matías Gil Barbosa - Desarrollador Web">
                     </div>
                     
                     <!-- Columna Derecha (Texto + Habilidades) -->
@@ -87,6 +87,9 @@
                         <p>Exploración de la concurrencia combinando el bucle de eventos de `asyncio` con librerías de renderizado para optimizar procesos en tiempo real.</p>
                     </article>
                 </div>
+                <div style="display: flex; justify-content: center;">
+                <a href="formacion.html" class="btn-formacion" style="text-decoration: none;">Lee a cerca de mi formacion previa</a>
+                </div>
             </div>
         </section>
 
@@ -127,14 +130,14 @@
                 <div class="habilidades-container">
                     <div class="categoria-habilidad">
                         <h3>Backend & Software</h3>
-                        <div class="barra-progreso"><span class="nombre">Python</span><div class="fondo-barra"><div class="progreso morado" style="width: 90%;"></div></div></div>
-                        <div class="barra-progreso"><span class="nombre">SQL / SQLAlchemy</span><div class="fondo-barra"><div class="progreso morado" style="width: 80%;"></div></div></div>
-                        <div class="barra-progreso"><span class="nombre">C#</span><div class="fondo-barra"><div class="progreso morado" style="width: 60%;"></div></div></div>
+                        <div class="barra-progreso"><span class="nombre">Python - 90/100</span><div class="fondo-barra"><div class="progreso morado" style="width: 90%;"></div></div></div>
+                        <div class="barra-progreso"><span class="nombre">SQL / SQLAlchemy - 80/100</span><div class="fondo-barra"><div class="progreso morado" style="width: 80%;"></div></div></div>
+                        <div class="barra-progreso"><span class="nombre">C# - 60/100</span><div class="fondo-barra"><div class="progreso morado" style="width: 60%;"></div></div></div>
                     </div>
                     <div class="categoria-habilidad">
                         <h3>Frontend Web</h3>
-                        <div class="barra-progreso"><span class="nombre">HTML5 & CSS3</span><div class="fondo-barra"><div class="progreso rojo" style="width: 85%;"></div></div></div>
-                        <div class="barra-progreso"><span class="nombre">JavaScript (ES6+)</span><div class="fondo-barra"><div class="progreso rojo" style="width: 75%;"></div></div></div>
+                        <div class="barra-progreso"><span class="nombre">HTML5 & CSS3 - 85/100</span><div class="fondo-barra"><div class="progreso rojo" style="width: 85%;"></div></div></div>
+                        <div class="barra-progreso"><span class="nombre">JavaScript (ES6+) - 75/100</span><div class="fondo-barra"><div class="progreso rojo" style="width: 75%;"></div></div></div>
                     </div>
                     <div class="categoria-habilidad">
                         <h3>Herramientas & Librerías</h3>
@@ -146,6 +149,38 @@
                             <li>Modelado 3D (Fusion 360)</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: TESTIMONIOS Y OPINIONES -->
+        <section id="testimonios" class="seccion-oscura">
+            <div class="contenedor">
+                <h2 class="titulo-seccion">Lo que dicen de mí</h2>
+                
+                <!-- Contenedor dinámico de las tarjetas de opinión -->
+                <div id="grid-testimonios" class="testimonios-grid">
+                    <p style="text-align: center; color: var(--color-texto-mutado);">Cargando opiniones...</p>
+                </div>
+
+                <!-- Formulario para dejar un comentario -->
+                <div class="caja-formulario-opinion">
+                    <h3 class="borde-rojo" style="margin-bottom: 20px;">Dejar una opinión</h3>
+                    <form id="form-opinion" class="formulario-estilizado">
+                        <div class="form-grupo-doble">
+                            <input name="nombre" type="text" placeholder="Tu Nombre" required>
+                            <input name="especialidad" type="text" placeholder="Tu Especialidad / Empresa" required>
+                        </div>
+                        <p class="form-texto">describeme en 3 palabras max.</p>
+                        <div class="form-claves">
+                            <input name="clave1" type="text" placeholder="" required>
+                            <input name="clave2" type="text" placeholder="">
+                            <input name="clave3" type="text" placeholder="">
+                        </div>
+                        <p class="form-texto">tu comentario</p>
+                        <textarea name="descripcion" rows="3" placeholder="Escribe tu experiencia trabajando conmigo..." required></textarea>
+                        <button type="submit" class="btn-primario">Enviar Opinión</button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -175,5 +210,6 @@
         });
     </script>
 
+    <script src="{{ url_for('static', filename='js/script-inicio.js') }}"></script>
 </body>
 </html>

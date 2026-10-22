@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto | Matías Gil</title>
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/proyecto.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/proyecto.css') }}">
 </head>
 <body class="body-proyecto">
     <!-- Navegación simplificada -->
@@ -66,6 +66,6 @@
         </section>
     </main>
 
-    <script src="script-proyecto.js"></script>
+    <script src="{{ url_for('static', filename='js/script-proyecto.js') }}"></script>
 </body>
 </html>
