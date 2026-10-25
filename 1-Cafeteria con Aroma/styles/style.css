@@ -1,4 +1,4 @@
-.inicio, .biblioteca, .menu {
+.inicio, .biblioteca, .menu, .contacto {
     background-color: rgb(253, 217, 181);
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(87, 41, 8);
@@ -78,6 +78,28 @@
     pointer-events: none; 
 }
 
+.contacto::before {
+    content: "";
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Tu imagen y su repetición */
+    background-image: url('fondo-contacto.jpg');
+    background-repeat: repeat;
+    background-size: 50% auto;
+    
+    /* REGULA LA TRANSPARENCIA AQUÍ: 0.0 (invisible) a 1.0 (opaco) */
+    opacity: 0.2; 
+    
+    /* Coloca la imagen por debajo del texto */
+    z-index: -1; 
+    
+    /* Evita que interfiera con los clics en la página */
+    pointer-events: none; 
+}
 
 nav {
     background-color: rgb(100, 47, 10);

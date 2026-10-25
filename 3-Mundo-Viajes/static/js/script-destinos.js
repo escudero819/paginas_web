@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // ESTADO GLOBAL DE LA PÁGINA (1, 2, 3 o 4)
     // Cambiá este número para simular el paso del tiempo y ver cómo cambia el inicio
-    const estadoGlobal = "1"; 
+    const estadoGlobal = "3"; 
 
-    fetch('destinos.csv')
+    fetch('/static/data/destinos.csv')
         .then(respuesta => {
             if (!respuesta.ok) throw new Error("No se pudo cargar el archivo CSV");
             return respuesta.text();
@@ -18,21 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
             // Recorrer el CSV saltando la primera línea (encabezados)
             for (let i = 1; i < lineas.length; i++) {
                 const columnas = lineas[i].split(';');
-                if (columnas.length < 6) continue;
-
+                if (columnas.length < 7) continue; // Actualizado a 8 para incluir el precio
+                
                 const nombre = columnas[0].trim();
                 const imagen = columnas[1].trim();
                 const descripcion = columnas[2].trim();
                 const estadoDestino = columnas[3].trim();
-                const fechaInicio = columnas[4].trim(); // Extraído para uso futuro
-                const fechaFin = columnas[5].trim();    // Extraído para uso futuro
+                const temporada = columnas[4].trim();
+                const fechaInicio = columnas[5].trim();
+                const fechaFin = columnas[6].trim();
                 
-                // Si el estado del destino coincide con el estado global de la página, lo mostramos
+                // Extracción de la octava columna (índice 7)
+                const precio = columnas[7] ? columnas[7].trim() : "Consultar";
+
                 if (estadoDestino === estadoGlobal) {
                     const htmlTarjeta = `
                         <article class="tarjeta">
                             <div class="tarjeta-img-wrapper">
-                                <img src="${imagen}" alt="Imagen de ${nombre}">
+                                <img src="/static/${imagen}" alt="Imagen de ${nombre}">
                                 <div class="overlay-resenas">
                                     <a href="comentarios.html?destino=${encodeURIComponent(nombre)}" class="btn-resena">Ver Reseñas</a>
                                 </div>
@@ -40,7 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="tarjeta-info">
                                 <h3 class="destinos">${nombre}</h3>
                                 <p>${descripcion}</p>
-                                <!-- NUEVO BOTÓN DE RESERVA -->
+                                
+                                <!-- Etiqueta de precio inyectada aquí -->
+                                <p style="font-size: 1.3rem; font-weight: bold; color: #1A5276; margin: 15px 0;">
+                                    Desde $${precio} <span style="font-size: 0.9rem; font-weight: normal; color: #555;">por pasajero</span>
+                                </p>
+                                
                                 <a href="reserva.html" class="btn-reserva-tarjeta">Reservar Destino</a>
                             </div>
                         </article>

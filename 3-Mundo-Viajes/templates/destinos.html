@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todos los Destinos - Mundo Viajes</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
 </head>
 <body>
     <header id="Header">
-        <img src="styles/header.jfif" alt="imagen header">
+        <img src="{{ url_for('static', filename='styles/header.jfif') }}" alt="imagen header">
     </header>
     
     <nav>
         <a href="index.html#Header" class="logo-nav">
-            <img src="styles/logo-viajes.png" alt="Logo Mundo Viajes mini">
+            <img src="{{ url_for('static', filename='styles/logo-viajes.png')}}" alt="Logo Mundo Viajes mini">
             <span> Mundo Viajes </span>
         </a>
         <ul>
@@ -31,15 +31,15 @@
             <div class="carrusel-infinito">
                 <div class="track-carrusel">
                     <!-- Duplicamos las imágenes para crear la ilusión de scroll infinito -->
-                    <img src="styles/playa.jfif" alt="Playa">
-                    <img src="styles/montana.jfif" alt="Montaña">
-                    <img src="styles/ciudad.jfif" alt="Ciudad">
-                    <img src="styles/familia1.jpg" alt="Familia">
+                    <img src="{{ url_for('static', filename='styles/playa.jfif')}}" alt="Playa">
+                    <img src="{{ url_for('static', filename='styles/montana.jfif')}}" alt="Montaña">
+                    <img src="{{ url_for('static', filename='styles/ciudad.jfif')}}" alt="Ciudad">
+                    <img src="{{ url_for('static', filename='styles/familia1.jpg')}}" alt="Familia">
                     <!-- Duplicado -->
-                    <img src="styles/playa.jfif" alt="Playa">
-                    <img src="styles/montana.jfif" alt="Montaña">
-                    <img src="styles/ciudad.jfif" alt="Ciudad">
-                    <img src="styles/familia1.jpg" alt="Familia">
+                    <img src="{{ url_for('static', filename='styles/playa.jfif')}}" alt="Playa">
+                    <img src="{{ url_for('static', filename='styles/montana.jfif')}}" alt="Montaña">
+                    <img src="{{ url_for('static', filename='styles/ciudad.jfif')}}" alt="Ciudad">
+                    <img src="{{ url_for('static', filename='styles/familia1.jpg')}}" alt="Familia">
                 </div>
             </div>
         </section>
@@ -50,10 +50,10 @@
             
             <div class="filtros-temporada">
                 <button class="btn-filtro activo" data-temporada="todos">Ver Todos</button>
-                <button class="btn-filtro" data-temporada="1">Verano</button>
-                <button class="btn-filtro" data-temporada="2">Otoño</button>
-                <button class="btn-filtro" data-temporada="3">Invierno</button>
-                <button class="btn-filtro" data-temporada="4">Primavera</button>
+                <button class="btn-filtro" data-temporada="verano">Verano</button>
+                <button class="btn-filtro" data-temporada="otono">Otoño</button>
+                <button class="btn-filtro" data-temporada="invierno">Invierno</button>
+                <button class="btn-filtro" data-temporada="primavera">Primavera</button>
             </div>
             
             <div class="grid-tarjetas" id="contenedor-todos-destinos">
@@ -69,6 +69,6 @@
         </div>
     </footer>
 
-    <script src="script-todos-destinos.js"></script>
+    <script src="{{ url_for('static', filename='js/script-todos-destinos.js')}}"></script>
 </body>
 </html>

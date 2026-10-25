@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     titulo.innerText = `Reseñas de ${destinoSeleccionado}`;
 
     // Cargar el CSV de comentarios
-    fetch('comentarios.csv')
+    fetch('/static/data/comentarios.csv')
         .then(respuesta => respuesta.text())
         .then(csv => {
             const lineas = csv.split('\n').filter(linea => linea.trim() !== '');

@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservar - Mundo Viajes</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
 </head>
 <body>
     <header id="Header">
-        <img src="styles/header.jfif" alt="imagen header">
+        <img src="{{ url_for('static', filename='styles/header.jfif')}}" alt="imagen header">
     </header>
     
     <nav>
         <a href="index.html#Header" class="logo-nav">
-            <img src="styles/logo-viajes.png" alt="Logo Mundo Viajes mini">
+            <img src="{{ url_for('static', filename='styles/logo-viajes.png')}}" alt="Logo Mundo Viajes mini">
             <span> Mundo Viajes </span>
         </a>
         <ul>
@@ -99,6 +99,6 @@
         </div>
     </footer>
 
-    <script src="script-reserva.js"></script>
+    <script src="{{ url_for('static', filename='js/script-reserva.js')}}"></script>
 </body>
 </html>
