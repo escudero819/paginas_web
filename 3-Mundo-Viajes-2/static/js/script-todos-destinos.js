@@ -58,11 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="fechas-disponibles">${d.fechaInicio} - ${d.fechaFin}</span>
                         <p>${d.descripcion}</p>
                         
-                        <p style="font-size: 1.3rem; font-weight: bold; color: #1A5276; margin: 15px 0;">
+                        <p style="font-size: 1.3rem; font-weight: bold; color: #a51919; margin: 15px 0;">
                             Desde $${d.precio} <span style="font-size: 0.9rem; font-weight: normal; color: #555;">por pasajero</span>
                         </p>
                         
-                        <a href="reserva.html" class="btn-reserva-tarjeta">Reservar Destino</a>
+                        <a href="reserva.html?destino=${encodeURIComponent(d.nombre)}" class="btn-reserva-tarjeta">Reservar Destino</a>
                     </div>
                 </article>
             `;

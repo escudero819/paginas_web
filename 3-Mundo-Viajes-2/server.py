@@ -8,7 +8,7 @@ Comentarios = os.path.join(Carpeta, "static", "data", "comentarios.csv")
 Reservas = os.path.join(Carpeta, "static", "data", "reservas.csv")
 Destinos = os.path.join(Carpeta, "static", "data", "destinos.csv")
 
-CAMPOS_RESERVA = ["nombre", "email", "telefono", "destino", "mes", "semana", "pasajeros", "precio"]
+CAMPOS_RESERVA = ["nombre", "email", "telefono", "dni", "destino", "mes", "semana", "pasajeros", "precio"]
 
 @server.route("/")
 def inicio():
@@ -39,6 +39,7 @@ def reservar():
     nombre = request.form.get("nombre", "").strip()
     email = request.form.get("email", "").strip()
     telefono = request.form.get("telefono", "").strip()
+    dni = request.form.get("dni", "").strip()
     destino = request.form.get("destino", "").strip()
     mes = request.form.get("mes", "").strip()
     semana = request.form.get("semana", "").strip()
@@ -77,6 +78,7 @@ def reservar():
                 "nombre": nombre,
                 "email": email,
                 "telefono": telefono,
+                "dni": dni,
                 "destino": destino,
                 "mes": mes,
                 "semana": semana,
@@ -89,8 +91,44 @@ def reservar():
     except Exception as e:
         return jsonify({"error": f"Error interno: {str(e)}"}), 500
 
+@server.route("/agregar_comentario", methods=["POST"])
+def agregar_comentario():
+    dni = request.form.get("dni", "").strip()
+    destino = request.form.get("destino", "").strip()
+    comentario = request.form.get("comentario", "").strip()
+    estrellas = request.form.get("estrellas", "5").strip()
 
+    if not all([dni, destino, comentario]):
+        return jsonify({"error": "Faltan datos obligatorios"}), 400
 
+    # 1. Verificar si existe la reserva
+    reserva_valida = False
+    nombre_usuario = "Usuario" # Por defecto, por si no se encuentra
+    if os.path.exists(Reservas):
+        with open(Reservas, "r", encoding="utf-8") as file:
+            reader = csv.DictReader(file, delimiter=";")
+            for row in reader:
+                if row["dni"] == dni and row["destino"] == destino:
+                    reserva_valida = True
+                    nombre_usuario = row["nombre"]
+                    break
+    
+    if not reserva_valida:
+        return jsonify({"error": "No se encontró una reserva para este DNI en este destino."}), 403
+
+    # 2. Guardar el comentario
+    tiene_datos = os.path.exists(Comentarios) and os.path.getsize(Comentarios) > 0
+    try:
+        with open(Comentarios, "a", newline="", encoding="utf-8") as file:
+            # Usando el mismo orden que el JS espera leer: Usuario;Destino;Comentario;Estrellas
+            writer = csv.writer(file, delimiter=";")
+            if not tiene_datos:
+                writer.writerow(["Usuario", "Destino", "Comentario", "Estrellas"])
+            writer.writerow([nombre_usuario, destino, comentario, estrellas])
+        
+        return jsonify({"mensaje": "¡Gracias por tu comentario!"})
+    except Exception as e:
+         return jsonify({"error": f"Error al guardar: {str(e)}"}), 500
 
 if __name__ == "__main__":
     server.run(debug=True)

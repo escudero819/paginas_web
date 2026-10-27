@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nombresMeses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
     // 1. Cargar el CSV y llenar destinos
-    fetch('/static/data/destinos.csv')
+    fetch('static/data/destinos.csv')
         .then(res => res.text())
         .then(csv => {
             const lineas = csv.split('\n').filter(linea => linea.trim() !== '');
@@ -28,6 +28,51 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(err => console.error("Error cargando CSV:", err));
 
+    // 1. Cargar el CSV y llenar destinos
+    fetch('static/data/destinos.csv')
+        .then(res => res.text())
+        .then(csv => {
+            const lineas = csv.split('\n').filter(linea => linea.trim() !== '');
+            selectDestino.innerHTML = '<option value="" disabled selected>Seleccioná un destino...</option>';
+            
+            for (let i = 1; i < lineas.length; i++) {
+                const col = lineas[i].split(';');
+                if (col.length < 6) continue;
+
+                const destinoObj = {
+                    nombre: col[0].trim(),
+                    fechaInicio: col[4].trim(), 
+                    fechaFin: col[5].trim()     
+                };
+                destinosData.push(destinoObj);
+                selectDestino.innerHTML += `<option value="${destinoObj.nombre}">${destinoObj.nombre}</option>`;
+            }
+
+            // === NUEVA LÓGICA DE URL AQUÍ ===
+            // Una vez cargados los destinos, leemos la URL
+            const parametrosUrl = new URLSearchParams(window.location.search);
+            const destinoUrl = parametrosUrl.get('destino');
+
+            if (destinoUrl) {
+                // Comprobamos si el destino de la URL existe en nuestro catálogo
+                const existeDestino = destinosData.find(d => d.nombre === destinoUrl);
+                
+                if (existeDestino) {
+                    selectDestino.value = destinoUrl; // Lo seleccionamos automáticamente
+                    
+                    // Lo "bloqueamos" visualmente para que FormData lo siga detectando en el envío
+                    selectDestino.style.pointerEvents = "none";
+                    selectDestino.style.backgroundColor = "#e9ecef";
+                    selectDestino.style.color = "#6c757d";
+
+                    // Disparamos manualmente el evento "change" para que cargue los meses
+                    selectDestino.dispatchEvent(new Event('change'));
+                }
+            }
+            // ================================
+        })
+        .catch(err => console.error("Error cargando CSV:", err));
+
     // 2. Al elegir Destino -> Calcular y mostrar los Meses disponibles
     selectDestino.addEventListener('change', (e) => {
         const nombreElegido = e.target.value;
@@ -36,29 +81,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (destino) {
             selectMes.innerHTML = '<option value="" disabled selected>Elegí un mes...</option>';
             
-            // Extraer el número de mes (Ej: "21/12" -> mes 12)
-            const mesIni = parseInt(destino.fechaInicio.split('/')[1]) - 1; // Restamos 1 porque los arrays empiezan en 0
+            const mesIni = parseInt(destino.fechaInicio.split('/')[1]) - 1; 
             const mesFin = parseInt(destino.fechaFin.split('/')[1]) - 1;
             
             let mesesDisponibles = [];
             
-            // Lógica para saber qué meses agregar (si cruza de año o no)
             if (mesIni <= mesFin) {
                 for (let i = mesIni; i <= mesFin; i++) mesesDisponibles.push(nombresMeses[i]);
             } else {
-                // Caso Diciembre (11) a Marzo (2)
                 for (let i = mesIni; i <= 11; i++) mesesDisponibles.push(nombresMeses[i]);
                 for (let i = 0; i <= mesFin; i++) mesesDisponibles.push(nombresMeses[i]);
             }
             
-            // Inyectar los meses calculados
             mesesDisponibles.forEach(mes => {
                 selectMes.innerHTML += `<option value="${mes}">${mes}</option>`;
             });
 
             selectMes.disabled = false;
-            
-            // Resetear y bloquear semanas hasta que elija el mes
             selectSemana.innerHTML = '<option value="" disabled selected>Elegí el mes primero</option>';
             selectSemana.disabled = true;
         }

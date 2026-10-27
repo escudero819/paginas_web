@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     Desde $${precio} <span style="font-size: 0.9rem; font-weight: normal; color: #555;">por pasajero</span>
                                 </p>
                                 
-                                <a href="reserva.html" class="btn-reserva-tarjeta">Reservar Destino</a>
+                                <a href="reserva.html?destino=${encodeURIComponent(nombre)}" class="btn-reserva-tarjeta">Reservar Destino</a>
                             </div>
                         </article>
                     `;
