@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let destinosData = []; 
 
     // Cargar CSV
-    fetch('destinos.csv')
+    fetch('/static/data/destinos.csv')
         .then(res => res.text())
         .then(csv => {
             const lineas = csv.split('\n').filter(linea => linea.trim() !== '');

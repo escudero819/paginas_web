@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nombresMeses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
     // 1. Cargar el CSV y llenar destinos
-    fetch('destinos.csv')
+    fetch('/static/data/destinos.csv')
         .then(res => res.text())
         .then(csv => {
             const lineas = csv.split('\n').filter(linea => linea.trim() !== '');
@@ -79,26 +79,40 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Capturar el envío del formulario
     const formViaje = document.getElementById('form-viaje');
 
-    formViaje.addEventListener('submit', (evento) => {
+    formViaje.addEventListener('submit', async (evento) => {
         evento.preventDefault(); // Evita que la página se recargue y borre los datos
 
-        // Capturamos los datos que ingresó el usuario
-        const nombre = document.getElementById('nombre').value;
-        const destinoElegido = selectDestino.value;
-        const mesElegido = selectMes.value;
-        const semanaElegida = selectSemana.value;
-        const pasajeros = document.getElementById('pasajeros').value;
+        // Recolecta automáticamente todos los campos del formulario que tengan el atributo 'name'
+        const formData = new FormData(formViaje);
 
-        // Mostramos la ventana del sistema (alerta)
-        alert(`¡Gracias, ${nombre}!\n\nHemos recibido tu solicitud para viajar a ${destinoElegido} en el mes de ${mesElegido} (${semanaElegida}) para ${pasajeros} pasajero(s).\n\nUn asesor VIP se contactará con usted a la brevedad.`);
+        try {
+            // Enviamos la petición POST al servidor en la ruta /reservar
+            const respuesta = await fetch('/reservar', {
+                method: 'POST',
+                body: formData
+            });
 
-        // Limpiamos el formulario para que quede como nuevo
-        formViaje.reset();
+            const resultado = await respuesta.json();
 
-        // Volvemos a bloquear los selectores de mes y semana
-        selectMes.innerHTML = '<option value="" disabled selected>Primero elegí un destino</option>';
-        selectMes.disabled = true;
-        selectSemana.innerHTML = '<option value="" disabled selected>Elegí el mes primero</option>';
-        selectSemana.disabled = true;
+            if (respuesta.ok) {
+                // Muestra la alerta dinámica generada por Python con el precio total
+                alert(`¡Gracias!\n\n${resultado.mensaje}\n\nUn asesor VIP se contactará con usted a la brevedad.`);
+
+                // Limpiamos el formulario para que quede como nuevo
+                formViaje.reset();
+
+                // Volvemos a bloquear los selectores de mes y semana
+                selectMes.innerHTML = '<option value="" disabled selected>Primero elegí un destino</option>';
+                selectMes.disabled = true;
+                selectSemana.innerHTML = '<option value="" disabled selected>Elegí el mes primero</option>';
+                selectSemana.disabled = true;
+            } else {
+                // Muestra el mensaje de error si el servidor rechaza la reserva (ej. campos vacíos)
+                alert("Error en la reserva: " + resultado.error);
+            }
+        } catch (error) {
+            console.error("Error conectando con el servidor:", error);
+            alert("Hubo un problema de conexión al procesar la reserva. Intente nuevamente.");
+        }
     });
 });

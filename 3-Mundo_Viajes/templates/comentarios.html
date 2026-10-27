@@ -31,6 +31,44 @@
         </section>
     </main>
 
+
+    <!-- En comentarios.html, antes del footer -->
+    <section id="seccion-agregar-comentario" style="margin-top: 40px; border-top: 2px solid #ccc; padding-top: 20px;">
+        <h2>¿Viajaste con nosotros? ¡Dejanos tu reseña!</h2>
+        
+        <!-- Paso 1: Validación de DNI -->
+        <div id="paso-validacion" style="text-align: center">
+            <p>Ingresá el DNI con el que hiciste la reserva para este destino:</p>
+            <div class="grupo-input" style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                <input type="text" id="dni-validacion" placeholder="Tu DNI" style="width: 30%">
+                <button id="btn-validar-dni" class="btn-reserva" style="margin-top: 10px; font-size: 1rem; width: 30%">Validar Reserva</button>
+            </div>
+            <p id="mensaje-validacion" style="color: red; margin-top: 10px; display: none;"></p>
+        </div>
+
+        <!-- Paso 2: Formulario de Comentario (Oculto inicialmente) -->
+        <form id="form-comentario" style="display: none;">
+            <input type="hidden" id="dni-confirmado" name="dni">
+            <input type="hidden" id="destino-comentario" name="destino">
+            
+            <div class="grupo-input">
+                <label for="estrellas">Puntuación:</label>
+                <select id="estrellas" name="estrellas" required>
+                    <option value="⭐⭐⭐⭐⭐">5 Estrellas</option>
+                    <option value="⭐⭐⭐⭐">4 Estrellas</option>
+                    <option value="⭐⭐⭐">3 Estrellas</option>
+                    <option value="⭐⭐">2 Estrellas</option>
+                    <option value="⭐">1 Estrella</option>
+                </select>
+            </div>
+            <div class="grupo-input">
+                <label for="comentario">Tu experiencia:</label>
+                <textarea id="comentario" name="comentario" rows="4" required placeholder="Escribe aquí tu reseña..."></textarea>
+            </div>
+            <button type="submit" class="btn-reserva" style="font-size: 1rem;">Publicar Reseña</button>
+        </form>
+    </section>
+
     <footer id="Contacto">
         <div class="footer-info">
             <p><strong>Instagram:</strong> MundoViajes.ig | <strong>X (Twitter):</strong> MundoVajes.blog</p>

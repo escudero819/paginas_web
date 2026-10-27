@@ -57,4 +57,60 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error(err);
             contenedor.innerHTML = "<p>Error al cargar las reseñas.</p>";
         });
+    
+
+    // --- NUEVA LÓGICA PARA AGREGAR COMENTARIOS ---
+    const btnValidar = document.getElementById('btn-validar-dni');
+    const inputDni = document.getElementById('dni-validacion');
+    const msjValidacion = document.getElementById('mensaje-validacion');
+    const pasoValidacion = document.getElementById('paso-validacion');
+    const formComentario = document.getElementById('form-comentario');
+    
+    // Configurar el input hidden del destino
+    document.getElementById('destino-comentario').value = destinoSeleccionado;
+
+    // Lógica temporal para mostrar el formulario (El backend real hace la validación completa)
+    // Como no podemos hacer un endpoint solo para validar sin crear una ruta nueva en Flask, 
+    // lo enviamos todo junto al intentar publicar.
+    
+    btnValidar.addEventListener('click', () => {
+        const dni = inputDni.value.trim();
+        if(dni) {
+            document.getElementById('dni-confirmado').value = dni;
+            pasoValidacion.style.display = 'none';
+            formComentario.style.display = 'block';
+        } else {
+            msjValidacion.innerText = "Por favor ingresa un DNI.";
+            msjValidacion.style.display = 'block';
+        }
+    });
+
+    formComentario.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(formComentario);
+
+        try {
+            const respuesta = await fetch('/agregar_comentario', {
+                method: 'POST',
+                body: formData
+            });
+
+            const resultado = await respuesta.json();
+
+            if (respuesta.ok) {
+                alert(resultado.mensaje);
+                location.reload(); // Recarga la página para ver el nuevo comentario
+            } else {
+                // Si la reserva no es válida o hay error
+                alert("Error: " + resultado.error);
+                // Volver al paso de validación
+                formComentario.style.display = 'none';
+                pasoValidacion.style.display = 'block';
+            }
+        } catch (error) {
+            console.error(error);
+            alert("Hubo un problema de conexión.");
+        }
+    });
 });
