@@ -8,8 +8,8 @@
 </head>
 <body class="biblioteca">
     <header id="Inicio">
-        <h1>Cafe Con Aroma</h1>
-        <h3>el cielo al alcance de un cafe</h3>
+        <h1>Café Con Aroma</h1>
+        <h3>el cielo al alcance de un café</h3>
     </header>
     
     <nav>
@@ -23,42 +23,67 @@
 
     <main class="menu-carta">
         <h1 class="titulo-carta">Nuestra Biblioteca</h1>
+        <p class="intro-biblioteca">
+            Elegí tu próxima lectura. Cada libro fue curado para maridar con nuestras especialidades de cafetería.
+        </p>
 
+        <!-- SECCIÓN 1: Filosofía de las Categorías -->
         <section class="seccion-texto">
-            <h2>Categorías</h2>
+            <h2>Nuestros Rincones Literarios</h2>
             <div class="columnas-cafe">
                 <div class="col-cafe">
-                    <h3>Filosofía</h3>
-                    <p class="item-desc">Reflexioná mientras disfrutas tu café. Desde pensadores clásicos hasta ensayos contemporáneos.</p>
+                    <h3>Filosofía y Ensayos</h3>
+                    <p class="item-desc">Reflexioná mientras disfrutás tu café. Desde pensadores clásicos hasta miradas contemporáneas sobre el mundo moderno.</p>
+                </div>
+                <div class="col-cafe">
+                    <h3>Literatura y Clásicos</h3>
+                    <p class="item-desc">Las grandes plumas de la historia. Relatos profundos y novelas imprescindibles que dejan huella como un buen espresso.</p>
                 </div>
                 <div class="col-cafe">
                     <h3>Fantasía</h3>
-                    <p class="item-desc">Viajá a otros mundos. Novelas épicas, sistemas de magia y aventuras inolvidables para perderte horas.</p>
-                </div>
-                <div class="col-cafe">
-                    <h3>Clásicos</h3>
-                    <p class="item-desc">Lecturas imprescindibles. Las grandes obras de la literatura universal que nunca pasan de moda.</p>
+                    <p class="item-desc">Viajá a otros universos. Novelas épicas, realismo mágico y aventuras envolventes para perder la noción del tiempo.</p>
                 </div>
             </div>
         </section>
 
-        <section class="seccion-destacada">
-            <h2>Solicitar un libro</h2>
+        <!-- SECCIÓN 2: Catálogo Filtrable -->
+        <section class="seccion-destacada" id="catalogo-seccion">
+            <h2>Catálogo Disponible</h2>
+            
+            <!-- Botones de Filtrado -->
+            <div class="filtros-categorias" id="contenedor-filtros">
+                <button class="btn-filtro activo" data-categoria="Todos">Todos</button>
+                <button class="btn-filtro" data-categoria="Filosofia">Filosofía</button>
+                <button class="btn-filtro" data-categoria="Literatura">Literatura</button>
+                <button class="btn-filtro" data-categoria="Ensayos">Ensayos</button>
+                <button class="btn-filtro" data-categoria="Fantasia">Fantasía</button>
+            </div>
+
+            <!-- Grilla donde JS inyecta las tarjetas de libros -->
+            <div class="grid-libros" id="contenedor-libros"></div>
+        </section>
+
+        <!-- SECCIÓN 3: Formulario de Reserva / Préstamo -->
+        <section class="seccion-destacada" id="seccion-prestamo">
+            <h2>Solicitar un Libro en Préstamo</h2>
             <form id="form-prestamo">
                 <fieldset>
-                    <legend>Detalles del Préstamo</legend>
+                    <legend>Detalles del Préstamo (Plazo de 2 semanas)</legend>
                     
-                    <label for="nombre-lector">Nombre completo:</label>
-                    <input type="text" id="nombre-lector" name="nombre-lector" placeholder="Ej. Ana López" required>
+                    <label for="nombre-lector">Nombre y Apellido:</label>
+                    <input type="text" id="nombre-lector" name="nombre" placeholder="Ej. Ana López" required>
                     
                     <label for="libro-seleccionado">Libro a solicitar:</label>
-                    <input type="text" id="libro-seleccionado" name="libro-seleccionado" placeholder="Ej. Cien Años de Soledad" required>
+                    <input type="text" id="libro-seleccionado" name="libro" placeholder="Seleccioná un libro del catálogo o escribilo acá..." required>
                     
-                    <!-- NUEVO CAMPO: Fecha de retiro -->
-                    <label for="fecha-retiro">Día de retiro:</label>
-                    <input type="date" id="fecha-retiro" name="fecha-retiro" required>
+                    <label for="fecha-retiro">Día de retiro por el local:</label>
+                    <input type="date" id="fecha-retiro" name="retiro" required>
+
+                    <label for="fecha-devolucion-vista">Fecha estimada de devolución (14 días):</label>
+                    <input type="text" id="fecha-devolucion-vista" placeholder="Elegí una fecha de retiro..." readonly class="input-readonly">
+                    <!-- Campo oculto en formato YYYY-MM-DD para guardar prolijo en el CSV -->
+                    <input type="hidden" id="fecha-devolucion" name="devolucion">
                     
-                    <!-- Checkbox de Términos adaptado al nuevo CSS -->
                     <div class="contenedor-terminos">
                         <input type="checkbox" id="terminos-libros" name="terminos-libros" required>
                         <label for="terminos-libros">
@@ -70,15 +95,15 @@
                 </fieldset>
             </form>
             
-            <!-- Mensaje donde JavaScript inyectará la fecha de devolución -->
-            <p id="mensaje-devolucion" style="text-align: center; margin-top: 20px; font-weight: bold; color: #642f0a;"></p>
+            <!-- Mensaje de respuesta del servidor -->
+            <div id="mensaje-devolucion" class="alerta-prestamo" style="display: none;"></div>
         </section>
     </main>
 
     <footer id="Contacto" class="pipag">
-        <h4>Direccion: Av Libertador 1020</h4>
-        <h4>Redes Sociales: Aromas.ig (instagram) Aromas.fb (Facebook)</h4>
-        <p>cualquier consulta al privado del siguiente numero: +54 1354 35-1332</p>
+        <h4>Dirección: Av Libertador 1020</h4>
+        <h4>Redes Sociales: Aromas.ig (Instagram) | Aromas.fb (Facebook)</h4>
+        <p>Cualquier consulta al privado del siguiente número: +54 1354 35-1332</p>
     </footer>
 
     <script src="{{ url_for('static', filename='js/script-libros.js') }}"></script>

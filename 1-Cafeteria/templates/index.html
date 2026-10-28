@@ -76,10 +76,24 @@
             </div>
         </section>
 
-        <section id="biblioteca">
-            <h1> Mas alla de un cafe </h1>
-            <!-- hacer una proporcion 40/60 explicando la presencia de la biblioteca, tu tamanio y un boton que lleve a ella -->
-             <p> proximamente descripcion e imagen de la biblioteca y gente leyendo, ademas de un boton que lo vincule con el index</p>
+        <section id="biblioteca" class="seccion-destacada">
+            <h1>Más allá de un café</h1>
+            <div class="presentacion-biblioteca">
+                <div class="biblioteca-img-contenedor">
+                    <!-- Ruta preparada para cuando generes la imagen -->
+                    <img src="{{ url_for('static', filename='images/biblioteca-ambiente.jpg') }}" alt="Espacio de lectura en Café con Aroma" class="img-biblioteca">
+                </div>
+                <div class="biblioteca-info">
+                    <h2>Un refugio de historias y aromas</h2>
+                    <p>
+                        Nuestra biblioteca cuenta con más de <strong>300 títulos cuidadosamente seleccionados</strong> para transformar tu pausa de café en un viaje inolvidable. Desde clásicos de la literatura universal hasta profundos ensayos de filosofía y mundos fantásticos.
+                    </p>
+                    <p>
+                        Puedes disfrutar de cualquier ejemplar en nuestras mesas mientras degustas tu filtrado favorito, o utilizar nuestro sistema de préstamo gratuito por dos semanas para seguir leyendo en casa.
+                    </p>
+                    <a href="libros.html" class="boton-enviar btn-explorar">Explorar el Catálogo y Reservar</a>
+                </div>
+            </div>
         </section>
 
 
