@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const secEspecialidad = document.getElementById('sec-especialidad');
     const secPasteleria = document.getElementById('sec-pasteleria');
 
-    fetch('menu.csv')
+    fetch('/static/data/menu.csv')
         .then(respuesta => respuesta.text())
         .then(textoCsv => {
             const lineas = textoCsv.split('\n').filter(linea => linea.trim() !== '');
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <article class="tarjeta-hover">
                             ${badge}
                             <h3>${producto}</h3>
-                            <img src="${imagen}" alt="${producto}">
+                            <img src="/static/images/${imagen}" alt="${producto}">
                             <p>${descripcion}</p>
                             <p class="precio-unico">${stringPrecios}</p>
                         </article>

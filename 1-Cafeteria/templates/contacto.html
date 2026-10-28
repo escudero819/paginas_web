@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Café con Aroma</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
 </head>
 <body class="contacto">
     <header id="Inicio">
@@ -42,7 +42,7 @@
                     <div class="contenedor-terminos">
                         <input type="checkbox" id="terminos" name="terminos" required>
                         <label for="terminos">
-                            He leído y acepto los <a href="terminos.txt" target="_blank">Términos y Condiciones</a>.
+                            He leído y acepto los <a href="{{ url_for('static', filename='terminos.txt') }}" target="_blank">Términos y Condiciones</a>.
                         </label>
                     </div>
                     
@@ -58,12 +58,6 @@
         <p>Cualquier consulta al privado del siguiente número: +54 9 11 1354-1332</p>
     </footer>
 
-    <script>
-        document.getElementById('form-contacto').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert("¡Gracias por contactarte con Café con Aroma! Recibimos tu mensaje y te responderemos a la brevedad.");
-            this.reset();
-        });
-    </script>
+    <script src="{{ url_for('static', filename='js/script-contacto.js') }}"></script>
 </body>
 </html>

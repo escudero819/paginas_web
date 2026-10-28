@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafeteria con Aroma</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
 </head>
 <body class="inicio">
     <header id="Inicio">
@@ -36,13 +36,13 @@
         <section>
             <h1> Quienes somos? </h1>
             <div class="presentacion">
-                <img src="logo.png" alt="imagen del logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="imagen del logo">
                 <div class="descripcion">
                     <p>
                         Cafe con Aroma es una cafeteria hogarenia que tiene como objetivo presentar 
                         los mejores aromas de cafe otorgando una degustacion y experiencia inolvidables
                     </p>
-                    <img src="cafeteria.jfif" alt="cafeteria img" class="cafeteria">
+                    <img src="{{ url_for('static', filename='images/cafeteria.jfif') }}" alt="cafeteria img" class="cafeteria">
                 </div>
             </div>
         </section>
@@ -110,7 +110,7 @@
                     <div class="contenedor-terminos">
                         <input type="checkbox" id="terminos-reserva" name="terminos-reserva" required>
                         <label for="terminos-reserva">
-                            He leído y acepto los <a href="terminos.txt" target="_blank">Términos y Condiciones</a>.
+                            He leído y acepto los <a href="{{ url_for('static', filename='terminos.txt') }}" target="_blank">Términos y Condiciones</a>.
                         </label>
                     </div>
                     
@@ -132,43 +132,7 @@
         </p>
     </footer>
 
-
-    <!-- Script para procesar la reserva y descargar el TXT -->
-    <script>
-        document.getElementById('reservaForm').addEventListener('submit', function(evento) {
-            // 1. Evita que la página se recargue al enviar el formulario
-            evento.preventDefault(); 
-
-            // 2. Obtener los valores que escribió el usuario
-            const nombre = document.getElementById('nombre').value;
-            const fecha = document.getElementById('fecha').value;
-            const personas = document.getElementById('personas').value;
-
-            // 3. Crear el contenido del archivo de texto
-            const contenidoTxt = `--- COMPROBANTE DE RESERVA ---\nCafetería: Café Con Aroma\n\nNombre: ${nombre}\nDía de la reserva: ${fecha}\nCantidad de personas: ${personas}\n------------------------------`;
-
-            // 4. Crear un archivo virtual (Blob) con el texto
-            const blob = new Blob([contenidoTxt], { type: 'text/plain' });
-            const url = window.URL.createObjectURL(blob);
-
-            // 5. Crear un enlace invisible para forzar la descarga del TXT
-            const enlaceDescarga = document.createElement('a');
-            enlaceDescarga.style.display = 'none';
-            enlaceDescarga.href = url;
-            enlaceDescarga.download = `Reserva_${nombre.replace(/\s+/g, '_')}.txt`;
-            
-            // 6. Simular el clic y limpiar
-            document.body.appendChild(enlaceDescarga);
-            enlaceDescarga.click();
-            window.URL.revokeObjectURL(url);
-            document.body.removeChild(enlaceDescarga);
-            
-            // 7. Avisar al usuario y vaciar los campos
-            alert('¡Reserva confirmada! Se descargará un comprobante en formato TXT.');
-            this.reset();
-        });
-    </script>
-
-    <script src="script_menu.js"></script>
+    <script src="{{ url_for('static', filename='js/script-inicio.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script_menu.js') }}"></script>
 </body>
 </html>

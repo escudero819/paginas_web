@@ -304,9 +304,9 @@ article:hover {
 /* --- SECCION DE LAS DIFERENTES ESPECIALIDADES --- */ 
 
 /* 1. Mantenemos tus imágenes de fondo */
-.cafe { background-image: url(../colombiano.jfif); }
-.menues { background-image: url(../combo_salado.jpg); }
-.cafeteria { background-image: url(../cafeteria2.jfif); }
+.cafe { background-image: url(../images/colombiano.jfif); }
+.menues { background-image: url(../images/combo_salado.jpg); }
+.cafeteria { background-image: url(../images/cafeteria2.jfif); }
 
 .articulado {
     display: grid;

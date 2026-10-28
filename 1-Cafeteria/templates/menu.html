@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú Completo - Café con Aroma</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
 </head>
 <body class="menu">
     <header id="Inicio">
@@ -65,6 +65,6 @@
     </footer>
 
     <!-- Vinculamos el script específico del menú -->
-    <script src="script_menu.js"></script>
+    <script src="{{ url_for('static', filename='js/script_menu.js') }}"></script>
 </body>
 </html>
