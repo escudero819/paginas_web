@@ -25,6 +25,12 @@
                 <input type="text" name="nombre" id="checkout-nombre" placeholder="Nombre completo" required>
                 <input type="email" name="email" id="checkout-email" placeholder="Correo electrónico" required>
                 <input type="tel" name="telefono" id="checkout-telefono" placeholder="Teléfono" required>
+                <div class="contenedor-terminos">
+                    <input type="checkbox" id="terminos-libros" name="terminos-libros" required>
+                    <label for="terminos-libros">
+                        He leído y acepto los <a href="{{ url_for('static', filename='terminos.txt') }}" target="_blank">Términos de Préstamo</a>.
+                    </label>
+                </div>
                 <button type="submit" class="btn-primario" style="width: 100%; margin-top: 15px;">Confirmar y Descargar Recibo</button>
             </form>
         </section>
