@@ -89,6 +89,14 @@
                             <label for="pasajeros">Cantidad de Pasajeros</label>
                             <input type="number" id="pasajeros" name="pasajeros" min="1" max="15" value="2" required>
                         </div>
+
+                        <!-- Checkbox de Términos y Condiciones -->
+                        <div class="contenedor-terminos">
+                            <input type="checkbox" id="terminos" name="terminos" required>
+                            <label for="terminos">
+                                He leído y acepto los <a href="{{ url_for('static', filename='terminos.txt') }}" target="_blank">Términos y Condiciones</a>.
+                            </label>
+                        </div>
                     </fieldset>
 
                     <button type="submit" class="btn-reserva" style="width: 100%; margin-top: 20px;">Solicitar Presupuesto</button>

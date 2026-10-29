@@ -181,6 +181,14 @@
                         <p class="form-texto">tu comentario</p>
                         <textarea name="descripcion" rows="3" placeholder="Escribe tu experiencia trabajando conmigo..." required></textarea>
                         <button type="submit" class="btn-primario">Enviar Opinión</button>
+
+                        <!-- Checkbox de Términos y Condiciones -->
+                        <div class="contenedor-terminos">
+                            <input type="checkbox" id="terminos" name="terminos" required>
+                            <label for="terminos">
+                                He leído y acepto los <a href="{{ url_for('static', filename='terminos.txt') }}" target="_blank">Términos y Condiciones</a>.
+                            </label>
+                        </div>
                     </form>
                 </div>
             </div>

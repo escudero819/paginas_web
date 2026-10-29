@@ -1,4 +1,2 @@
-dia;hora;compras;total
-2026-10-22;16:31:30;1x Google Nest Hub;90
-2026-10-22;16:31:45;1x Amazon Echo Dot 5, 1x Google Nest Hub, 1x Philips Hue White & Color;185
-2026-10-23;11:13:40;2x Google Nest Hub, 1x Philips Hue White & Color;225
+dia;hora;nombre;email;telefono;compras;total
+2026-10-29;00:38:33;miguel ohara;miguel@hotmail.com;+54 33-4455;1x Samsung Galaxy S24, 1x iPhone 15 Pro, 1x Google Nest Hub, 1x Amazon Echo Dot 5, 1x JBL Flip 6;2470

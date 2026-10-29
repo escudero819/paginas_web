@@ -270,37 +270,20 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarVistaCarrito();
     }
 
-    async function ComprarCarrito() {
+    // Reemplaza la función ComprarCarrito existente en static/js/script-catalogo.js
+    function ComprarCarrito() {
         if (carritoMemoria.length === 0) {
             alert("El carrito está vacío. Agrega productos antes de comprar.");
             return;
         }
-
         const totalCalculado = carritoMemoria.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
-
-        try {
-            const respuesta = await fetch("/agregar_compra", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    compras: carritoMemoria,
-                    total: totalCalculado
-                })
-            });
-            
-            const resultado = await respuesta.json();
-            if (!respuesta.ok) {
-                throw new Error(resultado.error || "Error en el servidor.");
-            }
-            
-            alert(resultado.mensaje);
-            sidebarCarrito.classList.add('carrito-oculto');
-            VaciarCarrito();
-        } catch (error) {
-            alert(error.message || "No se pudo procesar la compra.");
-        }
+        
+        // Guardar en localStorage para pasarlo a la página de checkout
+        localStorage.setItem('checkoutCarrito', JSON.stringify(carritoMemoria));
+        localStorage.setItem('checkoutTotal', totalCalculado);
+        
+        // Redireccionar
+        window.location.href = "/checkout.html";
     }
 
     // ==========================================
