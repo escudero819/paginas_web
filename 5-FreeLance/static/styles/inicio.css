@@ -2,11 +2,19 @@
 .hero-section {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     background: radial-gradient(circle at center, #1a1a2e 0%, var(--bg-oscuro) 70%);
     padding-top: 80px;
+}
+
+.imagen-header {
+    max-height: 100px;
+    border-radius: 400px;
+    border: 2px solid var(--color-morado);
+    margin: 25px
 }
 
 .etiqueta-tech {
@@ -18,14 +26,14 @@
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: inline-block;
 }
 
 .hero-content h1 {
     font-size: 4rem;
     line-height: 1.1;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .resaltado-morado {
