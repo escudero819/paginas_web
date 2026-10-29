@@ -22,6 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('proyecto-desc').innerText = proyecto.descripcion;
             document.getElementById('texto-contribucion').innerText = proyecto.contribucion;
 
+            // NUEVO: Comprobar si existe un link e inyectarlo
+            const contenedorLink = document.getElementById('contenedor-link');
+            const btnLink = document.getElementById('btn-link-proyecto');
+            if (proyecto.link) {
+                btnLink.href = proyecto.link;
+                contenedorLink.style.display = 'block'; // Muestra el botón
+            } else {
+                contenedorLink.style.display = 'none'; // Se asegura de ocultarlo
+            }
+
             // 4. Inyectar Listas (Viñetas)
             const ulEquipo = document.getElementById('lista-equipo');
             proyecto.equipo.forEach(persona => {

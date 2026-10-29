@@ -1,6 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
     let catalogoLibros = []; // Se llenará desde el CSV
 
+    // --- Lógica del Carrusel de Categorías ---
+    const track = document.getElementById('carrusel-track');
+    const btnAnt = document.getElementById('btn-ant');
+    const btnSig = document.getElementById('btn-sig');
+
+    if(track && btnAnt && btnSig) {
+        btnSig.addEventListener('click', () => {
+            // Desplaza el ancho de una tarjeta hacia la derecha
+            const slideWidth = track.querySelector('.carrusel-slide').clientWidth;
+            track.scrollBy({ left: slideWidth + 20, behavior: 'smooth' });
+        });
+
+        btnAnt.addEventListener('click', () => {
+            // Desplaza el ancho de una tarjeta hacia la izquierda
+            const slideWidth = track.querySelector('.carrusel-slide').clientWidth;
+            track.scrollBy({ left: -(slideWidth + 20), behavior: 'smooth' });
+        });
+    }
+
     const contenedorLibros = document.getElementById("contenedor-libros");
     const botonesFiltro = document.querySelectorAll(".btn-filtro");
     const inputLibro = document.getElementById("libro-seleccionado");

@@ -1,0 +1,201 @@
+.libreria {
+    color: black;
+    max-width: 1200;
+    justify-content: center;
+    margin: 0 auto
+}
+
+/* =========================================================
+   CORRECCIONES: MODALIDAD Y FUNCIONAMIENTO
+   ========================================================= */
+/* Ajustamos la sección para que ocupe menos espacio vertical y no toque los bordes laterales */
+.seccion-destacada.modalidad-biblioteca {
+    max-width: 100%;
+    margin: 15px auto; /* Reduce el espacio exterior exagerado */
+    padding: 15px 15px; /* El 15px lateral evita que las tarjetas toquen el borde de la pantalla */
+    justify-content: center;
+    min-height: 50vh;
+}
+
+.modalidad-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px; /* Reducimos el hueco entre tarjetas para que se acomoden mejor */
+    margin-top: 15px;
+}
+
+.modalidad-item {
+    background-color: #fffaf5;
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #e6ccb2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.modalidad-item:hover {
+    transform: translateY(-5px);
+}
+
+.icono-modalidad {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.modalidad-item h3 {
+    color: #642f0a;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.modalidad-item p {
+    color: #4a2508;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   CARRUSEL DE CATEGORÍAS (HOVER EFECTO)
+   ========================================================= */
+.seccion-carrusel {
+    margin: 40px auto;
+    max-width: 1000px;
+    text-align: center;
+    position: relative;
+}
+
+.carrusel-contenedor {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+.carrusel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px;
+    /* Ocultar scrollbar visualmente pero mantener funcionalidad */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+.carrusel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.carrusel-slide {
+    flex: 0 0 calc(33.333% - 14px); /* Muestra 3 tarjetas en PC */
+    scroll-snap-align: start;
+    height: 350px; /* Altura de la tarjeta */
+}
+
+/* Diseño de la Tarjeta con Hover */
+.tarjeta-categoria {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background-color: #d5bdaf; /* Fallback si no hay imagen */
+}
+
+.tarjeta-categoria .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(62, 31, 13, 0.85); /* Tono café oscuro transparente */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* =========================================================
+   CORRECCIONES: CONTENIDO DEL CARRUSEL
+   ========================================================= */
+.tarjeta-categoria .contenido {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10px; /* Reducimos un poco el padding interno */
+    box-sizing: border-box; /* CLAVE: Evita que el padding expanda la tarjeta y descentre el texto */
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+.tarjeta-categoria .contenido h3 {
+    font-size: 1.1rem; /* Reducido de 1.5rem a 1.1rem para que quepa perfectamente */
+    margin-bottom: 8px;
+    color: #f5ebe0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.tarjeta-categoria .contenido p {
+    font-size: 0.85rem; /* Reducimos ligeramente la descripción para acompañar al título */
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* Activación del Hover */
+.tarjeta-categoria:hover .overlay {
+    opacity: 1;
+}
+
+.tarjeta-categoria:hover .contenido {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Botones del Carrusel */
+.carrusel-btn {
+    background-color: #642f0a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.carrusel-btn:hover {
+    background-color: #3e1f0d;
+}
+
+.carrusel-btn.anterior {
+    left: -20px;
+}
+
+.carrusel-btn.siguiente {
+    right: -20px;
+}
+
+/* Responsividad del Carrusel */
+@media (max-width: 900px) {
+    .carrusel-slide { flex: 0 0 calc(50% - 10px); } /* 2 tarjetas en Tablet */
+}
+@media (max-width: 600px) {
+    .carrusel-slide { flex: 0 0 100%; } /* 1 tarjeta en Móvil */
+    .carrusel-btn.anterior { left: 5px; }
+    .carrusel-btn.siguiente { right: 5px; }
+}

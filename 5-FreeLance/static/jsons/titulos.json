@@ -1,0 +1,23 @@
+[
+  {
+    "nombre": "Adults 3 - English Course",
+    "institucion": "Oxford",
+    "tiempo": "3 años de formacion"
+  },
+  {
+    "nombre": "1° Congreso de Inteligencia Artificial",
+    "institucion": "Alta Gracia - Cine Teatro Monumental",
+    "tiempo": "Certificado de Participación"
+  },
+  {
+    "nombre": "NASA Space Apps Challenge 2026",
+    "institucion": "NASA",
+    "tiempo": "Hackathon"
+  },
+  {
+    "nombre": "3er puesto ONIET 2025",
+    "institucion": "Universidad Blas Pascal",
+    "tiempo": "Competencia Educativa"
+  }
+
+]

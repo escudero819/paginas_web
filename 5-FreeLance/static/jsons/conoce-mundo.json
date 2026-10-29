@@ -12,5 +12,6 @@
     "roles": ["lider de proyecto", "Desarrollador de HUI", "PM"],
     "contribucion": "Fui el encargado de programar toda la parte del mapamundi y la integracion de la IA en la camara, ademas de calibrar la misma a los gestos de las manos. Tambien me encargue de combinar los archivos de API de BD a la seccion de informacion y su muestreo al usuario, es decir, el frontend.",
     "herramientas": ["Python", "matplotlib", "open-cv", "reconocimiento con IA", "Git"],
-    "blandas": ["Liderazgo técnico", "Tolerancia a la frustración", "Comunicación asertiva en equipo"]
+    "blandas": ["Liderazgo técnico", "Tolerancia a la frustración", "Comunicación asertiva en equipo"],
+    "link": "https://github.com/mbobautistamario-create/robotica_cem.git"
 }

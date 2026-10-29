@@ -12,5 +12,6 @@
     "roles": ["Desarrollador Principal", "Diseñador de Lógica", "Pixel Artist"],
     "contribucion": "Fui responsable de programar el motor de colisiones, gestionar las transiciones de estado del jugador (Arcade Views) y diseñar el pixel art de la sala 'Laboratorio'.",
     "herramientas": ["Python", "Arcade Library", "IA generative", "Git"],
-    "blandas": ["Liderazgo técnico", "Tolerancia a la frustración", "Comunicación asertiva en equipo"]
+    "blandas": ["Liderazgo técnico", "Tolerancia a la frustración", "Comunicación asertiva en equipo"],
+    "link": "https://drive.google.com/drive/folders/1a8D0BAU6WJLZXRyoOIFKZCN6ZAsHvKlk?usp=sharing"
 }

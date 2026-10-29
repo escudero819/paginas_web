@@ -13,5 +13,6 @@
     "roles": ["Unico Desarrollador", "Diseñador de Lógica", "QA"],
     "contribucion": "Me encargue yo mismo de toda la creacion y desarrollo de la pagina web apoyado en parte del vibe coding como medio de aprendizaje",
     "herramientas": ["HTML", "JavaScript", "CSS avanzado", "archivos CSV"],
-    "blandas": ["Autodireccion", "Organizacion", "Formas", "Metodologias Agiles"]
+    "blandas": ["Autodireccion", "Organizacion", "Formas", "Metodologias Agiles"],
+    "link": "https://github.com/escudero819/paginas_web.git"
 }

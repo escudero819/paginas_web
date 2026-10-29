@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca - Café con Aroma</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/libros.css') }}">
 </head>
 <body class="biblioteca">
     <header id="Inicio">
@@ -21,28 +22,87 @@
         </ul>
     </nav>
 
-    <main class="menu-carta">
+    <main class="libreria">
         <h1 class="titulo-carta">Nuestra Biblioteca</h1>
         <p class="intro-biblioteca">
             Elegí tu próxima lectura. Cada libro fue curado para maridar con nuestras especialidades de cafetería.
         </p>
 
-        <!-- SECCIÓN 1: Filosofía de las Categorías -->
-        <section class="seccion-texto">
+        <!-- SECCIÓN 1: Modalidad y Funcionamiento -->
+        <section class="seccion-destacada modalidad-biblioteca">
+            <h2>Nuestra Modalidad</h2>
+            <div class="modalidad-grid">
+                <article class="modalidad-item">
+                    <span class="icono-modalidad">☕</span>
+                    <h3>Café y Letras</h3>
+                    <p>Disfrutá de cualquier ejemplar del catálogo mientras degustás tu café en el local. Nuestro ambiente está diseñado para tu concentración y relax.</p>
+                </article>
+                <article class="modalidad-item">
+                    <span class="icono-modalidad">📚</span>
+                    <h3>Catálogo Curado</h3>
+                    <p>Contamos con libros cuidadosamente seleccionados. Desde ensayos profundos hasta mundos fantásticos, cada uno con una recomendación de maridaje.</p>
+                </article>
+                <article class="modalidad-item">
+                    <span class="icono-modalidad">🗓️</span>
+                    <h3>Préstamos a 14 días</h3>
+                    <p>¿Te atrapó la historia? Reservá tus libros de forma online, retiralos en la cafetería y tenés dos semanas enteras para leerlos en tu casa.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: Carrusel de Categorías (Estilo index.html) -->
+        <section class="seccion-carrusel">
             <h2>Nuestros Rincones Literarios</h2>
-            <div class="columnas-cafe">
-                <div class="col-cafe">
-                    <h3>Filosofía y Ensayos</h3>
-                    <p class="item-desc">Reflexioná mientras disfrutás tu café. Desde pensadores clásicos hasta miradas contemporáneas sobre el mundo moderno.</p>
+            <div class="carrusel-contenedor">
+                <button class="carrusel-btn anterior" id="btn-ant" aria-label="Anterior">&#10094;</button>
+                
+                <div class="carrusel-track" id="carrusel-track">
+                    <!-- Tarjeta Filosofía -->
+                    <div class="carrusel-slide">
+                        <article class="tarjeta-categoria" style="background-image: url('{{ url_for('static', filename='images/cat-filosofia.jpg') }}');">
+                            <div class="overlay"></div>
+                            <div class="contenido">
+                                <h3>Filosofía y Ensayos</h3>
+                                <p>Reflexioná mientras disfrutás tu café. Desde pensadores clásicos hasta miradas contemporáneas.</p>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- Tarjeta Literatura -->
+                    <div class="carrusel-slide">
+                        <article class="tarjeta-categoria" style="background-image: url('{{ url_for('static', filename='images/cat-literatura.jpg') }}');">
+                            <div class="overlay"></div>
+                            <div class="contenido">
+                                <h3>Literatura y Clásicos</h3>
+                                <p>Las grandes plumas de la historia. Relatos profundos y novelas imprescindibles que dejan huella.</p>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- Tarjeta Fantasía -->
+                    <div class="carrusel-slide">
+                        <article class="tarjeta-categoria" style="background-image: url('{{ url_for('static', filename='images/cat-fantasia.jpg') }}');">
+                            <div class="overlay"></div>
+                            <div class="contenido">
+                                <h3>Fantasía</h3>
+                                <p>Viajá a otros universos. Novelas épicas, realismo mágico y aventuras envolventes.</p>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- Tarjeta Extra (Para que el carrusel tenga movimiento) -->
+                    <div class="carrusel-slide">
+                        <article class="tarjeta-categoria" style="background-image: url('{{ url_for('static', filename='images/cat-poesia.jpg') }}');">
+                            <div class="overlay"></div>
+                            <div class="contenido">
+                                <h3>Poesía y Cuentos</h3>
+                                <p>Lecturas breves e intensas. Ideales para acompañar un espresso rápido o una pausa corta.</p>
+                            </div>
+                        </article>
+                    </div>
                 </div>
-                <div class="col-cafe">
-                    <h3>Literatura y Clásicos</h3>
-                    <p class="item-desc">Las grandes plumas de la historia. Relatos profundos y novelas imprescindibles que dejan huella como un buen espresso.</p>
-                </div>
-                <div class="col-cafe">
-                    <h3>Fantasía</h3>
-                    <p class="item-desc">Viajá a otros universos. Novelas épicas, realismo mágico y aventuras envolventes para perder la noción del tiempo.</p>
-                </div>
+
+                <button class="carrusel-btn siguiente" id="btn-sig" aria-label="Siguiente">&#10095;</button>
             </div>
         </section>
 
