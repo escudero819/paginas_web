@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
     <title>Gimnasio PoweFit</title>
 </head>
 <body>
     <header id="Inicio">
-        <img src="styles/fondo_header_gimnasio.jfif" alt="header">
+        <img src="{{ url_for('static', filename='styles/fondo_header_gimnasio.jfif')}}" alt="header">
     </header>
 
     <nav>
         <a href="#Inicio" class="logo-nav">
-            <img src="styles/logo-gimnasio.png" alt="Logo Powerfit mini">
+            <img src="{{ url_for('static', filename='styles/logo-gimnasio.png')}}" alt="Logo Powerfit mini">
             <span>Powerfit</span> <!-- Opcional: el nombre al lado del loquito -->
         </a>
         <ul>
@@ -43,12 +43,12 @@
 
                 <div class="comparacion-visual">
                     <div class="tarjeta-visual">
-                        <img src="sedentarismo.webp" alt="Persona cansada o en estado sedentario">
+                        <img src="{{ url_for('static', filename='images/sedentarismo.webp') }}" alt="Persona cansada o en estado sedentario">
                         <div class="etiqueta">El punto de partida</div>
                     </div>
                     
                     <div class="tarjeta-visual destacada">
-                        <img src="atletismo.jfif" alt="Persona atlética y llena de energía">
+                        <img src="{{ url_for('static', filename='images/atletismo.jfif') }}" alt="Persona atlética y llena de energía">
                         <div class="etiqueta">Tu mejor versión</div>
                     </div>
                 </div>
@@ -119,8 +119,8 @@
                         <h3>Nuestras Instalaciones</h3>
                         <div class="galeria-sedes">
                             <!-- Usa imágenes de sedes reales o genéricas -->
-                            <img src="sede_central.jfif" alt="Sede Central">
-                            <img src="sede_norte.jfif" alt="Sede Norte">
+                            <img src="{{ url_for('static', filename='images/sede_central.jfif') }}" alt="Sede Central">
+                            <img src="{{ url_for('static', filename='images/sede_norte.jfif') }}" alt="Sede Norte">
                         </div>
                         <p>Contamos con múltiples sedes equipadas con tecnología de última generación para tu comodidad.</p>
                     </div>
@@ -136,7 +136,7 @@
                                 <li>Bancos planos, inclinados y racks de sentadillas</li>
                             </ul>
                         </div>
-                        <img src="musculacion.jfif" alt="Máquinas de musculación">
+                        <img src="{{ url_for('static', filename='images/musculacion.jfif') }}" alt="Máquinas de musculación">
                     </div>
 
                     <!-- 3. Contenido Crossfit -->
@@ -150,7 +150,7 @@
                                 <li>Estructuras gigantes para dominadas y anillas</li>
                             </ul>
                         </div>
-                        <img src="crosfit.jpeg" alt="Equipos de Crossfit">
+                        <img src="{{ url_for('static', filename='images/crosfit.jpeg') }}" alt="Equipos de Crossfit">
                     </div>
 
                     <!-- 4. Contenido Yoga -->
@@ -164,7 +164,7 @@
                                 <li>Bolsters y mantas térmicas de relajación</li>
                             </ul>
                         </div>
-                        <img src="yoga.jpg" alt="Elementos de Yoga">
+                        <img src="{{ url_for('static', filename='images/yoga.jpg') }}" alt="Elementos de Yoga">
                     </div>
 
                 </div>
@@ -215,7 +215,7 @@
                 </div>
 
                 <!-- Este botón redirige a la página de inscripción pasando el parámetro -->
-                <a href="#" id="btn-inscribirse-modal" class="btn-primario">Inscribirme a esta clase</a>
+                <a href="/formulario" id="btn-inscribirse-modal" class="btn-primario">Inscribirme a esta clase</a>
             </div>
         </div>
     </main>
@@ -230,6 +230,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

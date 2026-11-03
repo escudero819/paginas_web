@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscripción - PowerFit</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
 </head>
 <body>
     <!-- Contenedor que dividirá la pantalla en dos -->
@@ -12,7 +12,7 @@
         
         <!-- Panel Izquierdo: Fijo y con el Logo -->
         <aside class="panel-fijo-logo">
-            <img src="styles/logo-gimnasio.png" alt="Logo PowerFit">
+            <img src="{{ url_for('static', filename='styles/logo-gimnasio.png') }}" alt="Logo PowerFit">
             <h1>PowerFit</h1>
         </aside>
 
@@ -79,7 +79,7 @@
         </main>
     </div>
 
-    <script src="script-formulario.js"></script>
+    <script src="{{ url_for('static', filename='js/script-formulario.js') }}"></script>
     </script>
 </body>
 </html>

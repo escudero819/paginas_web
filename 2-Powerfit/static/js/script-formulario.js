@@ -21,20 +21,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. MANEJAR EL ENVÍO DEL FORMULARIO
     const formulario = document.getElementById('formInscripcion');
     
-    formulario.addEventListener('submit', (evento) => {
+    formulario.addEventListener('submit', async (evento) => {
         // Evitamos que la página parpadee o se recargue al tocar el botón
         evento.preventDefault(); 
 
-        // Capturamos los datos que el usuario escribió o eligió
-        const nombre = document.getElementById('nombre').value;
-        const clase = document.getElementById('clase').value;
-        const dias = document.getElementById('dias').value;
-        const turno = document.getElementById('turno').value;
-
-        // Simulamos un envío exitoso con un mensaje en pantalla
-        alert(`¡Inscripción exitosa!\n\nBienvenido/a al equipo, ${nombre}. Hemos registrado tu solicitud para ${clase}, ${dias} por semana en el turno ${turno}. Nos pondremos en contacto contigo pronto.`);
-        
-        // Vaciamos el formulario para dejarlo limpio
-        formulario.reset();
+        try {
+            const respuesta = await fetch("/inscripcion", {
+                method: "POST",
+                body: new FormData(formulario) // Enviamos todos los datos del formulario
+            });
+            const resultado = await respuesta.json();
+            if (!respuesta.ok) {
+                throw new Error(resultado.error || "No se pudo procesar la inscripcion")
+            }
+                alert(resultado.mensaje);
+        } catch (error) {
+            alert("Hubo un error al enviar la inscripción. Por favor, inténtalo de nuevo.");
+        }
+        formulario.reset(); // Limpiamos el formulario después de enviarlo
     });
 });

@@ -1,5 +1,5 @@
-const urlClases = 'clases.csv';
-const urlPrecios = 'precios.csv';
+const urlClases = 'static/data/clases.csv';
+const urlPrecios = 'static/data/precios.csv';
 
 // Aquí guardaremos la información agrupada del CSV
 let infoClases = {};
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             infoHorarios.innerHTML = htmlHorarios;
 
             // EL TRUCO DE LA URL: Redirigimos al formulario pasando la clase en la dirección
-            btnInscribirse.href = `formulario.html?clase=${encodeURIComponent(claseTocada)}`;
+            btnInscribirse.href = `/formulario?clase=${encodeURIComponent(claseTocada)}`;
 
             // Mostramos el modal
             modal.style.display = 'flex';
